@@ -37,47 +37,41 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
         
         {/* Brand Logo exactly as requested */}
-        <a href="#" className="flex items-baseline gap-2 select-none group">
-          <span className="font-serif text-xl sm:text-2xl font-bold tracking-[0.05em] text-[#2C2623] group-hover:text-[#8F533C] transition-colors">
+        <a href="#" className="flex flex-col select-none group leading-tight shrink-0">
+          <span className="font-serif text-base sm:text-lg md:text-xl font-bold tracking-[0.06em] text-[#2C2623] group-hover:text-[#8F533C] transition-colors uppercase">
             TANSHU VAIDIK
           </span>
-          <span className="font-sans text-[10px] font-medium tracking-[0.1em] text-[#615751] uppercase border-l border-[#EBE4DC] pl-2 hidden sm:inline">
+          <span className="font-sans text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.05em] text-[#615751] uppercase">
             India Pvt. Ltd.
           </span>
         </a>
 
-        {/* Desktop Links with active underline micro-interactions */}
-        <div className="hidden lg:flex items-center gap-7">
+        {/* Desktop Links with active underline micro-interactions - visible from md screen up */}
+        <div className="hidden md:flex items-center gap-4 lg:gap-7 shrink-0">
           {menuItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="relative font-sans text-xs font-semibold text-[#2C2623] hover:text-[#8F533C] tracking-widest transition-colors py-1 nav-link"
+              className="relative font-sans text-[10px] lg:text-xs font-bold text-[#2C2623] hover:text-[#8F533C] tracking-widest transition-colors py-1 nav-link flex items-center gap-1 uppercase shrink-0"
             >
-              {item.label}
+              <span>{item.label}</span>
+              {(item.label === 'COLLECTIONS' || item.label === 'CAPABILITIES' || item.label === 'SUSTAINABILITY') && (
+                <span className="text-[8px] text-[#8F533C] translate-y-[0.5px]">▼</span>
+              )}
             </a>
           ))}
         </div>
 
         {/* Action Button & Inquiry Badge */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           
-          {/* Envelope/Mail Icon */}
-          <a
-            href="mailto:info@tanshuvaidik.com.au"
-            className="text-[#2C2623] hover:text-[#8F533C] p-1.5 transition-colors hidden sm:block"
-            title="Email us directly"
-          >
-            <Mail size={18} />
-          </a>
-
           {/* REQUEST CATALOGUE CTA (with optional badge) */}
           <button
             id="rfq-trigger-btn"
             onClick={() => setIsPortalOpen(true)}
-            className="relative flex items-center gap-1.5 sm:gap-2 border border-[#8F533C] bg-[#8F533C] hover:bg-[#2C2623] hover:border-[#2C2623] text-white px-3 sm:px-5 py-2 sm:py-2.5 font-button text-[10px] sm:text-[11px] tracking-widest transition-all duration-300 rounded-none cursor-pointer shadow-xs shrink-0"
+            className="relative flex items-center gap-1.5 sm:gap-2 border border-[#8F533C] bg-[#8F533C] hover:bg-[#2C2623] hover:border-[#2C2623] text-white px-3 lg:px-5 py-2 sm:py-2.5 font-sans text-[9px] lg:text-[10px] font-bold tracking-widest transition-all duration-300 rounded-none cursor-pointer shadow-xs shrink-0"
           >
-            <ClipboardList size={13} className="shrink-0" />
+            <ClipboardList size={11} className="shrink-0" />
             <span className="hidden min-[380px]:inline">REQUEST CATALOGUE</span>
             <span className="inline min-[380px]:hidden">CATALOGUE</span>
             {cart.length > 0 && (
@@ -87,10 +81,19 @@ export const Navbar: React.FC = () => {
             )}
           </button>
 
+          {/* Envelope/Mail Icon */}
+          <a
+            href="mailto:info@tanshuvaidik.com.au"
+            className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#EBE4DC] hover:border-[#8F533C] hover:text-[#8F533C] text-[#2C2623] transition-colors shrink-0"
+            title="Email us directly"
+          >
+            <Mail size={14} />
+          </a>
+
           {/* Mobile Menu Icon */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-[#2C2623] hover:text-[#8F533C] p-1 transition-colors"
+            className="md:hidden text-[#2C2623] hover:text-[#8F533C] p-1 transition-colors shrink-0"
             aria-label="Toggle Menu"
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}

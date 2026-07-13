@@ -2,9 +2,12 @@ import React from 'react';
 import { InquiryProvider } from './context/InquiryContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
+import { WhyChooseUs } from './components/WhyChooseUs';
 import { Collections } from './components/Collections';
-
+import { TrustStats } from './components/TrustStats';
+import { Certifications } from './components/Certifications';
+import { VideoBanner } from './components/VideoBanner';
+import { About } from './components/About';
 import { GlobalPresence } from './components/GlobalPresence';
 import { B2BPortal } from './components/B2BPortal';
 import { Footer } from './components/Footer';
@@ -27,11 +30,23 @@ export default function App() {
           {/* Editorial Loom Banner Section */}
           <Hero />
 
-          {/* Core Handloom & Weaver Narrative */}
-          <About />
+          {/* Why Global Buyers Choose TanshU */}
+          <WhyChooseUs />
 
           {/* Interactive Catalog and Bespoke Thread Visualizer */}
           <Collections />
+
+          {/* Trust and Capability Badges */}
+          <TrustStats />
+
+          {/* Certifications (Exact mockup location) */}
+          <Certifications />
+
+          {/* High Fidelity Video / Story Banner */}
+          <VideoBanner />
+
+          {/* Core Handloom & Weaver Narrative (The Heart Behind Every Piece) */}
+          <About />
 
           {/* Centered Editorial Headline */}
           <div className="pt-24 pb-8 bg-[#FAF8F5] flex flex-col items-center justify-center text-center px-6">

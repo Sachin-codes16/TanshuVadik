@@ -20,6 +20,7 @@ interface CategoryCard {
   name: string;
   image: string;
   itemCount: number;
+  subtitle?: string;
 }
 
 export const Collections: React.FC = () => {
@@ -127,21 +128,30 @@ export const Collections: React.FC = () => {
   // Define Seasonal categories with counts and newly generated collection images
   const seasonalCategories: CategoryCard[] = useMemo(() => [
     {
-      name: 'Christmas Collection',
+      name: 'SPRING / SUMMER COLLECTION',
       image: '/src/assets/images/christmas_collection_hero_1783703878387.jpg',
-      itemCount: products.filter(p => p.subcategory === 'Christmas Collection').length
+      itemCount: products.filter(p => p.subcategory === 'Christmas Collection').length,
+      subtitle: 'Bright, Breezy, Beautiful.'
     },
     {
-      name: 'Fall Collection',
+      name: 'FALL / WINTER COLLECTION',
       image: '/src/assets/images/fall_collection_hero_1783703894398.jpg',
-      itemCount: products.filter(p => p.subcategory === 'Fall Collection').length
+      itemCount: products.filter(p => p.subcategory === 'Fall Collection').length,
+      subtitle: 'Warm, Cozy, Timeless.'
     }
   ], []);
 
   // Filter products by selected category
   const activeProducts = useMemo(() => {
     if (!selectedCategory) return [];
-    return products.filter((p) => p.subcategory.toLowerCase() === selectedCategory.toLowerCase());
+    const lowerSel = selectedCategory.toLowerCase();
+    if (lowerSel.includes('spring') || lowerSel.includes('summer')) {
+      return products.filter((p) => p.subcategory === 'Christmas Collection');
+    }
+    if (lowerSel.includes('fall') || lowerSel.includes('winter')) {
+      return products.filter((p) => p.subcategory === 'Fall Collection');
+    }
+    return products.filter((p) => p.subcategory.toLowerCase() === lowerSel);
   }, [selectedCategory]);
 
   const handleRequestCustomSwatch = (e: React.FormEvent) => {
@@ -342,13 +352,23 @@ export const Collections: React.FC = () => {
                 </div>
 
                 {/* Subcategory Label below card */}
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="font-sans text-sm font-bold tracking-[0.12em] text-[#2C2623] uppercase group-hover:text-[#8F533C] transition-colors">
-                    {cat.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#8F533C]/80 font-semibold bg-[#8F533C]/5 px-2.5 py-0.5 border border-[#8F533C]/10">
-                    {cat.itemCount > 0 ? `${cat.itemCount} Items` : 'Catalog'}
-                  </span>
+                <div className="mt-4 flex flex-col gap-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-lg font-bold tracking-tight text-[#2C2623] group-hover:text-[#8F533C] transition-colors">
+                      {cat.name}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#8F533C]/80 font-semibold bg-[#8F533C]/5 px-2.5 py-0.5 border border-[#8F533C]/10">
+                      {cat.itemCount > 0 ? `${cat.itemCount} Items` : 'Catalog'}
+                    </span>
+                  </div>
+                  {cat.subtitle && (
+                    <span className="font-sans text-xs text-[#615751] italic">
+                      {cat.subtitle}
+                    </span>
+                  )}
+                  <div className="mt-2 text-xs font-bold text-[#8F533C] uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    EXPLORE NOW &rarr;
+                  </div>
                 </div>
               </motion.div>
             ))}
