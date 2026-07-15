@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Award, ShieldAlert, CheckCircle } from 'lucide-react';
+import iso1logo  from "../assets/images/iso1.png";
+import grs from "../assets/images/Global+Recycled+Standard.webp";
+import gmp from "../assets/images/gmp.webp";
+import sedex from "../assets/images/sedex-logo_brandlogos.net_elidv-512x137.png";
+import nongmo from "../assets/images/nongmo.webp";
 
 export const Certifications: React.FC = () => {
   const certs = [
@@ -8,13 +13,14 @@ export const Certifications: React.FC = () => {
       id: 'iso-9001',
       name: 'ISO 9001:2015',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" strokeDasharray="4 2" />
-          <circle cx="50" cy="50" r="38" stroke="#2C2623" strokeWidth="1" />
-          <text x="50" y="45" textAnchor="middle" fill="#2C2623" fontSize="18" fontWeight="bold" fontFamily="serif">ISO</text>
-          <text x="50" y="62" textAnchor="middle" fill="#8F533C" fontSize="10" fontWeight="bold" fontFamily="sans-serif">9001:2015</text>
-          <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">CERTIFIED</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="../images/Global+Recycled+Standard.webp">
+        //   <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" strokeDasharray="4 2" />
+        //   <circle cx="50" cy="50" r="38" stroke="#2C2623" strokeWidth="1" />
+        //   <text x="50" y="45" textAnchor="middle" fill="#2C2623" fontSize="18" fontWeight="bold" fontFamily="serif">ISO</text>
+        //   <text x="50" y="62" textAnchor="middle" fill="#8F533C" fontSize="10" fontWeight="bold" fontFamily="sans-serif">9001:2015</text>
+        //   <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">CERTIFIED</text>
+        // </svg>
+        <img src={iso1logo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
       ),
       description: '9001:2015',
     },
@@ -22,14 +28,16 @@ export const Certifications: React.FC = () => {
       id: 'iso-14001',
       name: 'ISO 14001:2015',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" strokeDasharray="4 2" />
-          <circle cx="50" cy="50" r="38" stroke="#2C2623" strokeWidth="1" />
-          <path d="M50 24C45 32 42 38 48 44C52 48 54 52 49 58" stroke="#8F533C" strokeWidth="1.5" strokeLinecap="round" />
-          <text x="50" y="42" textAnchor="middle" fill="#2C2623" fontSize="16" fontWeight="bold" fontFamily="serif">ISO</text>
-          <text x="50" y="62" textAnchor="middle" fill="#8F533C" fontSize="10" fontWeight="bold" fontFamily="sans-serif">14001:2015</text>
-          <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">ENVIRONMENTAL</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //   <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" strokeDasharray="4 2" />
+        //   <circle cx="50" cy="50" r="38" stroke="#2C2623" strokeWidth="1" />
+        //   <path d="M50 24C45 32 42 38 48 44C52 48 54 52 49 58" stroke="#8F533C" strokeWidth="1.5" strokeLinecap="round" />
+        //   <text x="50" y="42" textAnchor="middle" fill="#2C2623" fontSize="16" fontWeight="bold" fontFamily="serif">ISO</text>
+        //   <text x="50" y="62" textAnchor="middle" fill="#8F533C" fontSize="10" fontWeight="bold" fontFamily="sans-serif">14001:2015</text>
+        //   <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">ENVIRONMENTAL</text>
+        // </svg>
+
+        <img src={iso1logo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
       ),
       description: '14001:2015',
     },
@@ -37,14 +45,16 @@ export const Certifications: React.FC = () => {
       id: 'sedex',
       name: 'Sedex Member',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#EBE4DC" strokeWidth="2" />
-          <path d="M30 40C35 30 65 30 70 40C65 55 35 55 30 40Z" fill="#8F533C" opacity="0.15" />
-          <path d="M42 38C45 35 55 35 58 38C55 45 45 45 42 38Z" fill="#8F533C" />
-          <circle cx="50" cy="55" r="14" stroke="#2C2623" strokeWidth="1.5" />
-          <text x="50" y="80" textAnchor="middle" fill="#2C2623" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Sedex</text>
-          <text x="50" y="90" textAnchor="middle" fill="#615751" fontSize="8" fontFamily="sans-serif">Member</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //   <circle cx="50" cy="50" r="44" stroke="#EBE4DC" strokeWidth="2" />
+        //   <path d="M30 40C35 30 65 30 70 40C65 55 35 55 30 40Z" fill="#8F533C" opacity="0.15" />
+        //   <path d="M42 38C45 35 55 35 58 38C55 45 45 45 42 38Z" fill="#8F533C" />
+        //   <circle cx="50" cy="55" r="14" stroke="#2C2623" strokeWidth="1.5" />
+        //   <text x="50" y="80" textAnchor="middle" fill="#2C2623" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Sedex</text>
+        //   <text x="50" y="90" textAnchor="middle" fill="#615751" fontSize="8" fontFamily="sans-serif">Member</text>
+        // </svg>
+
+        <img src={sedex} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
       ),
       description: 'Member',
     },
@@ -52,15 +62,18 @@ export const Certifications: React.FC = () => {
       id: 'grs',
       name: 'Global Recycled Standard',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="1.5" />
-          <path d="M50 20C63.8 20 75 31.2 75 45C75 52.5 71.7 59.2 66.4 63.8L58 58" stroke="#8F533C" strokeWidth="2" strokeLinecap="round" />
-          <path d="M50 70C36.2 70 25 58.8 25 45C25 37.5 28.3 30.8 33.6 26.2L42 32" stroke="#2C2623" strokeWidth="2" strokeLinecap="round" />
-          <path d="M58 58L68 58L64 68Z" fill="#8F533C" />
-          <path d="M42 32L32 32L36 22Z" fill="#2C2623" />
-          <text x="50" y="48" textAnchor="middle" fill="#2C2623" fontSize="10" fontWeight="bold" fontFamily="sans-serif">Global Recycled</text>
-          <text x="50" y="58" textAnchor="middle" fill="#615751" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Standard</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //   <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="1.5" />
+        //   <path d="M50 20C63.8 20 75 31.2 75 45C75 52.5 71.7 59.2 66.4 63.8L58 58" stroke="#8F533C" strokeWidth="2" strokeLinecap="round" />
+        //   <path d="M50 70C36.2 70 25 58.8 25 45C25 37.5 28.3 30.8 33.6 26.2L42 32" stroke="#2C2623" strokeWidth="2" strokeLinecap="round" />
+        //   <path d="M58 58L68 58L64 68Z" fill="#8F533C" />
+        //   <path d="M42 32L32 32L36 22Z" fill="#2C2623" />
+        //   <text x="50" y="48" textAnchor="middle" fill="#2C2623" fontSize="10" fontWeight="bold" fontFamily="sans-serif">Global Recycled</text>
+        //   <text x="50" y="58" textAnchor="middle" fill="#615751" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Standard</text>
+        // </svg>
+
+           <img src={grs} alt="GRS logo" className="w-18 h-18 object-cover" />
+        
       ),
       description: 'Standard',
     },
@@ -68,13 +81,15 @@ export const Certifications: React.FC = () => {
       id: 'nongmo',
       name: 'NON GMO',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#EBE4DC" strokeWidth="2" />
-          <path d="M40 35C45 30 55 30 60 35C55 55 45 55 40 35Z" stroke="#8F533C" strokeWidth="2" fill="#8F533C" fillOpacity="0.1" />
-          <path d="M46 45L40 35L50 38" stroke="#8F533C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          <text x="50" y="65" textAnchor="middle" fill="#2C2623" fontSize="14" fontWeight="bold" fontFamily="sans-serif">NON</text>
-          <text x="50" y="78" textAnchor="middle" fill="#8F533C" fontSize="14" fontWeight="bold" fontFamily="sans-serif">GMO</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //   <circle cx="50" cy="50" r="44" stroke="#EBE4DC" strokeWidth="2" />
+        //   <path d="M40 35C45 30 55 30 60 35C55 55 45 55 40 35Z" stroke="#8F533C" strokeWidth="2" fill="#8F533C" fillOpacity="0.1" />
+        //   <path d="M46 45L40 35L50 38" stroke="#8F533C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        //   <text x="50" y="65" textAnchor="middle" fill="#2C2623" fontSize="14" fontWeight="bold" fontFamily="sans-serif">NON</text>
+        //   <text x="50" y="78" textAnchor="middle" fill="#8F533C" fontSize="14" fontWeight="bold" fontFamily="sans-serif">GMO</text>
+        // </svg>
+
+        <img src={nongmo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
       ),
       description: 'Project Verified',
     },
@@ -82,13 +97,15 @@ export const Certifications: React.FC = () => {
       id: 'gmp',
       name: 'GMP Certified',
       logo: (
-        <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" />
-          <path d="M35 50L45 60L65 40" stroke="#8F533C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          <text x="50" y="32" textAnchor="middle" fill="#2C2623" fontSize="12" fontWeight="bold" fontFamily="sans-serif">GMP</text>
-          <text x="50" y="78" textAnchor="middle" fill="#615751" fontSize="7" tracking-widest fontFamily="sans-serif">GOODS MANUFACTURE</text>
-          <text x="50" y="87" textAnchor="middle" fill="#615751" fontSize="7" tracking-widest fontFamily="sans-serif">PRACTICE CERTIFICATE</text>
-        </svg>
+        // <svg className="w-12 h-12 text-[#2C2623]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //   <circle cx="50" cy="50" r="44" stroke="#8F533C" strokeWidth="2" />
+        //   <path d="M35 50L45 60L65 40" stroke="#8F533C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        //   <text x="50" y="32" textAnchor="middle" fill="#2C2623" fontSize="12" fontWeight="bold" fontFamily="sans-serif">GMP</text>
+        //   <text x="50" y="78" textAnchor="middle" fill="#615751" fontSize="7" tracking-widest fontFamily="sans-serif">GOODS MANUFACTURE</text>
+        //   <text x="50" y="87" textAnchor="middle" fill="#615751" fontSize="7" tracking-widest fontFamily="sans-serif">PRACTICE CERTIFICATE</text>
+        // </svg>
+
+          <img src={gmp} alt="gmp logo" className="w-12 h-12 object-contain" />
       ),
       description: 'Practice Certificate',
     },

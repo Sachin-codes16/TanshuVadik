@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Play, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
+import bannerDogVideo from "../assets/banner-dog.mp4";
 
 export const Hero: React.FC = () => {
   return (
@@ -10,12 +11,20 @@ export const Hero: React.FC = () => {
     >
       {/* Background Image with elegant split overlay for high readability & contrast */}
       <div className="absolute inset-0 z-0">
-        <img
+        {/* <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAgdEoJ388LYmLORQcLJNBrO3JtaR3-S-DyJB-hesRiPrvyrIBm3_Cqb38k7mKj2EL0pYUdsloUVvN4WdPpZWo9GZVnRHlX51HXdVSY-ydP7t7UClRXp7DjFvdEPaCWp_CGrPBwJ3xqhwzOkTDpMhJ_LAuHEHZ3-GHXbegT5K1Huu4T_Usb0AHedf-Jhy7xjAIyVHmGlCuWr4IJeOtxKvCjTjIB67dRkDAa-f1T9inhnqi6avKF6UvjAEBV5zzqkY7LLLmgv3-KVQ"
           alt="Premium textured heritage home textiles and lifestyle setup"
           className="w-full h-full object-cover object-center opacity-40 scale-100 select-none pointer-events-none"
           referrerPolicy="no-referrer"
-        />
+        /> */}
+
+        
+        <video width="100%" height="auto" controls autoPlay loop muted playsInline >
+         <source src ={bannerDogVideo} type="video/mp4" />
+         your browser doesnot support the video tag
+        </video>
+
+    
         {/* Dark linear contrast gradients for elite editorial legibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#2C2623] via-[#2C2623]/90 to-[#2C2623]/25" />
       </div>
@@ -83,19 +92,19 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Side: Showcase badge card matching luxury brand aesthetic */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="hidden lg:flex lg:col-span-4 flex-col items-start gap-4 p-8 bg-[#FAF8F5]/5 backdrop-blur-md border border-white/10 rounded-none text-white shadow-2xl"
-        >
-          <span className="text-[10px] font-bold tracking-[0.25em] text-[#8F533C] uppercase">
+        > */}
+          {/* <span className="text-[10px] font-bold tracking-[0.25em] text-[#8F533C] uppercase">
             NOW FEATURING
-          </span>
-          <div className="font-serif text-xl font-light italic leading-snug">
+          </span> */}
+          {/* <div className="font-serif text-xl font-light italic leading-snug">
             "Sustainably Crafted Pet Linens"
-          </div>
-          <p className="font-sans text-xs text-[#E0D7CD] leading-relaxed font-light">
+          </div> */}
+          {/* <p className="font-sans text-xs text-[#E0D7CD] leading-relaxed font-light">
             Integrating premium hand-loomed cotton yarns, AZO-free non-toxic vegetable pigments, and high-tension shuttle loom structures.
           </p>
           <a
@@ -103,8 +112,8 @@ export const Hero: React.FC = () => {
             className="text-xs font-bold text-[#8F533C] hover:text-white flex items-center gap-1.5 transition-colors uppercase tracking-wider mt-2 border-b border-[#8F533C]/30 pb-1"
           >
             VIEW PRIVATE LABEL SOLUTIONS &rarr;
-          </a>
-        </motion.div>
+          </a> */}
+        {/* </motion.div> */}
       </div>
 
       {/* Floating Scroll Indicator */}

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { products } from '../data';
 import { Product } from '../types';
 import { useInquiry } from '../context/InquiryContext';
+import tableRunner from "../assets/images/tableRunner.jpeg"
 import {
   Sparkles,
   Layers,
@@ -55,14 +56,10 @@ export const Collections: React.FC = () => {
       itemCount: products.filter(p => p.subcategory === 'Cushions').length
     },
     {
-      name: 'Kitchen Towel',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDywWP7lWlxvFtWmgO77l5MOMAAb3UPjdiB7lRUF5odOoscY9WVivtnAdgvF9Kwm8GxSv1rvVROqCqPN5VhBPQAPDU_0wLhRzbvMvxLnxP-IWDl8FLfDKtms0MfWGQ7-pcLbTmvI_CD8r5nDFeP6SLgjPVsZE69nRi56JiLI8uNIlbepEHh8S1E6Tk_650NP2zZC3A0pz1Q6MXnTpoKhpeM3XvRKXX6ohhshKNy4iFr_hj-3fQTZIuXGvWEl_LlzupiQT99UEiG32o',
+      name: 'Throws',
+    
+      image: tableRunner,
       itemCount: products.filter(p => p.subcategory === 'Kitchen Towel').length
-    },
-    {
-      name: 'Pet Baskets',
-      image: '/src/assets/images/basket_laundry_lid_1783701221640.jpg',
-      itemCount: products.filter(p => p.subcategory === 'Pet Baskets').length
     },
     {
       name: 'Basket',
@@ -70,18 +67,24 @@ export const Collections: React.FC = () => {
       itemCount: products.filter(p => p.subcategory === 'Basket').length
     },
     {
+      name: 'Planters',
+      image: '/src/assets/images/basket_laundry_lid_1783701221640.jpg',
+      itemCount: products.filter(p => p.subcategory === 'Pet Baskets').length
+    },
+    ,
+    {
       name: 'Bath Mat',
       image: '/src/assets/images/bath_mat_elevated_1783702711259.jpg',
       itemCount: products.filter(p => p.subcategory === 'Bath Mat').length
     },
     {
-      name: 'Table Runner',
+      name: 'Table Linen',
       image: '/src/assets/images/table_cloth_blue_1783701149774.jpg',
-      itemCount: products.filter(p => p.subcategory === 'Table Runner').length
+      itemCount: products.filter(p => p.subcategory === 'Table Linen').length
     },
     {
-      name: 'Apron',
-      image: '/src/assets/images/apron_striped_1783702250471.jpg',
+      name: 'Kitchen Linen',
+      image: '/src/assets/images/KitchenLinen.jpeg',
       itemCount: products.filter(p => p.subcategory === 'Apron').length
     },
     {
@@ -95,8 +98,8 @@ export const Collections: React.FC = () => {
       itemCount: products.filter(p => p.subcategory === 'Wall Décor').length
     },
     {
-      name: 'Table Placemat',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCsPlfL1NGV_uz3NLYgrSniRCBhyLaEAY7g4m-VGltPLiYLjKD4zl2GRZIc2sxuxCymftPgZvuWJ9xtoeraur2NZKDV9RkI-1KPUclzGcnTMMpGr0pPNCigL5XthDY_5ETpUSgDVJSGpmtueqy3WyQzZgrn9BxgO5Jt0P99JjZYfR7KRQLGk2XHBsbLW-RvIChkFpJg4wBzE05SeI01PBxh4Ri-JVQPlgzf3yy6MxCdQra39Z2cZ9c3DGXdHFGQ0N8EGbLdWzrSKfs',
+      name: 'Seasonal Collections',
+      image: '/src/assets/images/SeasonalCollections.jpeg',
       itemCount: products.filter(p => p.subcategory === 'Table Placemat').length
     }
   ], []);
@@ -108,34 +111,35 @@ export const Collections: React.FC = () => {
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDiugj9V-Quo1PozNT5q1D1iancbI_mURD7GiOxGKWhC7ubGzoDRR7ABJKYIKapIQOhndU8DiBERRXR_FZJJqYzP7MH5I5DjVI67tyd--_W8zC_zqeP_uzBnEnpadDJG5Lk9pySdX2G3T7jePtZXgEqH2OE3Tot3eM5V99hvIu6hThtM_sp7Z5J5IGK3dWKpH9Kuw6b3iZG4DywroXWzJCI00dJ89KHf_wjkHbtXkPkC6XcHLKtWqm4pmGZUOLruH1xzHjW8okHeb0',
       itemCount: products.filter(p => p.subcategory === 'Pet Beds').length
     },
-    {
-      name: 'Carpet',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC9_Hwu0Q5aQaVvv67OAayDwRimgYOvkihi_dTTTlg3OqD__K_4s2yWVDnkBHTlyM5PMSBtVLeORj1v-b0NQ73ijEQyc2dayWosLts9EAtqbKr8p2Tsassi1HUbAO4QcVrgLh0C9ZjR7CJVPfhX0WhnFPRZYjux054grNznE0O_SCLa7f6ZPP96S8yaoHM6IRq4MLogBud4FAVOgN4msxBmQYhhSED6pqg8rh4Pc3p_0FJe-6t2MopredZjqmL9MwUDGXYn97r2YNg',
-      itemCount: products.filter(p => p.subcategory === 'Carpet').length
+      {
+      name: 'Pet Mat',
+      image: '/src/assets/images/pet_jute_mat_1783701244799.jpg',
+      itemCount: products.filter(p => p.subcategory === 'Pet Mat').length
     },
+   
     {
       name: 'Pet Toy Baskets',
       image: '/src/assets/images/basket_rope_twotone_1783702315626.jpg',
       itemCount: products.filter(p => p.subcategory === 'Pet Toy Baskets').length
     },
-    {
-      name: 'Pet Mat',
-      image: '/src/assets/images/pet_jute_mat_1783701244799.jpg',
-      itemCount: products.filter(p => p.subcategory === 'Pet Mat').length
-    }
+   {
+      name: 'Pet Accessories',
+      image: '/src/assets/images/petAccessories.jpeg',
+      itemCount: products.filter(p => p.subcategory === 'Pet Accessories').length
+    },
   ], []);
 
   // Define Seasonal categories with counts and newly generated collection images
   const seasonalCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'SPRING / SUMMER COLLECTION',
-      image: '/src/assets/images/christmas_collection_hero_1783703878387.jpg',
+      image: '/src/assets/images/SummerCollections.jpeg',
       itemCount: products.filter(p => p.subcategory === 'Christmas Collection').length,
       subtitle: 'Bright, Breezy, Beautiful.'
     },
     {
       name: 'FALL / WINTER COLLECTION',
-      image: '/src/assets/images/fall_collection_hero_1783703894398.jpg',
+      image: '/src/assets/images/winterCollections.jpeg',
       itemCount: products.filter(p => p.subcategory === 'Fall Collection').length,
       subtitle: 'Warm, Cozy, Timeless.'
     }
@@ -179,28 +183,26 @@ export const Collections: React.FC = () => {
   };
 
   return (
-    <section id="collections" className="py-24 bg-[#FAF8F5]">
+    <section id="collections" className="py-0 bg-[#FAF8F5]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Editorial Heading Section exactly styled like the mockup */}
         <div className="flex flex-col items-center text-center gap-3 mb-20 max-w-3xl mx-auto">
-          <span className="font-sans text-[11px] font-bold tracking-[0.3em] text-[#8F533C] uppercase">
-            WHOLESALE EXPORT CATALOGUE
-          </span>
+    
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2C2623] tracking-tight font-medium leading-tight">
             OUR COLLECTIONS
           </h2>
           
+          
           {/* Mockup Ornament divider (brown line with diamond) */}
           <div className="flex items-center gap-4 w-full justify-center my-3">
+
             <div className="h-[1px] bg-[#8F533C]/30 w-24 sm:w-40" />
             <div className="w-2.5 h-2.5 rotate-45 bg-[#8F533C]" />
             <div className="h-[1px] bg-[#8F533C]/30 w-24 sm:w-40" />
+
           </div>
           
-          <p className="font-sans text-sm sm:text-base text-[#615751] font-light max-w-xl leading-relaxed">
-            Partner with an ethical manufacturer trusted by tier-1 global retail buyers. Click any collection category to inspect individual products and construct your Wholesale Inquiry.
-          </p>
         </div>
 
         {/* 1. HOME DECOR SECTION */}
@@ -323,318 +325,49 @@ export const Collections: React.FC = () => {
           </div>
 
           {/* 2-Column Responsive Layout for Editorial Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
-            {seasonalCategories.map((cat, index) => (
-              <motion.div
-                key={cat.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                onClick={() => setSelectedCategory(cat.name)}
-                className="group cursor-pointer flex flex-col"
-              >
-                {/* Image Container with editorial aspect ratio and hover zooms */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
-                  <img
-                    src={cat.image}
-                    alt={cat.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                  />
-                  {/* Floating Action Button */}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/15 transition-colors duration-300 flex items-end justify-end p-4">
-                    <div className="bg-white/95 backdrop-blur-xs border border-[#EBE4DC] w-10 h-10 flex items-center justify-center text-[#2C2623] group-hover:bg-[#8F533C] group-hover:text-white transition-all duration-300 shadow-sm">
-                      <ChevronRight size={18} />
-                    </div>
-                  </div>
-                </div>
+         {/* Seasonal Collections Grid Section */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+  {seasonalCategories.map((category) => (
+    <div 
+      key={category.name} 
+      className="relative group overflow-hidden cursor-pointer w-full aspect-[4/3] md:aspect-[16/11]"
+      onClick={() => setSelectedCategory(category.name)}
+    >
+      {/* 1. Image Background */}
+      <img 
+        src={category.image} 
+        alt={category.name} 
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      
+      {/* 2. Dark Tint Overlay for Readable Text */}
+      <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
 
-                {/* Subcategory Label below card */}
-                <div className="mt-4 flex flex-col gap-1.5">
-                  <div className="flex items-center justify-between">
-                    <span className="font-serif text-lg font-bold tracking-tight text-[#2C2623] group-hover:text-[#8F533C] transition-colors">
-                      {cat.name}
-                    </span>
-                    <span className="text-[10px] font-mono text-[#8F533C]/80 font-semibold bg-[#8F533C]/5 px-2.5 py-0.5 border border-[#8F533C]/10">
-                      {cat.itemCount > 0 ? `${cat.itemCount} Items` : 'Catalog'}
-                    </span>
-                  </div>
-                  {cat.subtitle && (
-                    <span className="font-sans text-xs text-[#615751] italic">
-                      {cat.subtitle}
-                    </span>
-                  )}
-                  <div className="mt-2 text-xs font-bold text-[#8F533C] uppercase tracking-wider flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    EXPLORE NOW &rarr;
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* 3. Centered Absolute Content Box */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-white">
+        <h3 className="font-serif text-2xl md:text-3xl tracking-widest uppercase mb-2">
+          {category.name}
+        </h3>
+        
+        {category.subtitle && (
+          <p className="font-serif italic text-sm md:text-base opacity-90 mb-6 tracking-wide">
+            {category.subtitle}
+          </p>
+        )}
+        
+        {/* Bordered Button Element */}
+        <button className="px-6 py-2.5 border border-white text-xs uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black">
+          Explore Now &rarr;
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
 
 
-        {/* BESPOKE WEAVE VISUALIZER TOOL PANEL - Redesigned to fit warm luxury colorways */}
-        <div className="bg-white border border-[#EBE4DC] p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center shadow-xs">
-          
-          {/* Custom Controls Panel */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <span className="font-sans text-[10px] font-bold tracking-[0.25em] text-[#8F533C] uppercase flex items-center gap-1.5">
-                <Settings size={12} />
-                PRIVATE LABEL CO-CREATION
-              </span>
-              <h3 className="font-serif text-2xl md:text-3xl text-[#2C2623] font-medium leading-tight">
-                Bespoke Textile Weave Simulator
-              </h3>
-              <p className="font-sans text-xs text-[#615751] leading-relaxed">
-                Configure your custom warp/weft specifications, pattern designs, and densities. We will loom a 30x30 cm custom physical sample swatch and air-express it to your showroom.
-              </p>
-            </div>
-
-            <form onSubmit={handleRequestCustomSwatch} className="flex flex-col gap-4">
-              
-              {/* Pattern selection */}
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11px] font-semibold tracking-wider text-[#615751] uppercase">
-                  Select Weave Pattern Structure
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {(['herringbone', 'plaid', 'waffle'] as const).map((pat) => (
-                    <button
-                      key={pat}
-                      type="button"
-                      onClick={() => setPatternType(pat)}
-                      className={`py-2 text-[11px] font-sans font-medium uppercase border tracking-wider transition-all cursor-pointer ${
-                        patternType === pat
-                          ? 'border-[#8F533C] bg-[#8F533C]/5 text-[#8F533C] font-bold'
-                          : 'border-[#EBE4DC] text-[#615751] hover:border-[#2C2623]'
-                      }`}
-                    >
-                      {pat}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Color selectors */}
-              <div className="grid grid-cols-2 gap-4">
+    
                 
-                {/* Weft (Primary) */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-sans text-[11px] font-semibold tracking-wider text-[#615751] uppercase">
-                    Weft Accent Thread
-                  </label>
-                  <div className="flex items-center gap-2">
-                    {[
-                      { hex: '#8F533C', label: 'Terracotta Copper' },
-                      { hex: '#1C2B4F', label: 'Indigo Ink' },
-                      { hex: '#B79023', label: 'Artisan Gold' },
-                    ].map((col) => (
-                      <button
-                        key={col.hex}
-                        type="button"
-                        onClick={() => setWeftColor(col.hex)}
-                        className={`w-6 h-6 border-2 transition-transform cursor-pointer ${
-                          weftColor === col.hex ? 'border-[#2C2623] scale-110' : 'border-transparent'
-                        }`}
-                        style={{ backgroundColor: col.hex }}
-                        title={col.label}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Warp (Base) */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-sans text-[11px] font-semibold tracking-wider text-[#615751] uppercase">
-                    Warp Base Thread
-                  </label>
-                  <div className="flex items-center gap-2">
-                    {[
-                      { hex: '#2C2623', label: 'Earth Charcoal' },
-                      { hex: '#FAF8F5', label: 'Raw Sand' },
-                      { hex: '#FFFFFF', label: 'Bleached White' },
-                    ].map((col) => (
-                      <button
-                        key={col.hex}
-                        type="button"
-                        onClick={() => setWarpColor(col.hex)}
-                        className={`w-6 h-6 border-2 transition-transform cursor-pointer border-gray-300 ${
-                          warpColor === col.hex ? 'border-[#2C2623] scale-110' : 'border-transparent'
-                        }`}
-                        style={{ backgroundColor: col.hex }}
-                        title={col.label}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Weave density select */}
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11px] font-semibold tracking-wider text-[#615751] uppercase">
-                  Tension & Density
-                </label>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { val: 'standard', label: 'Standard (Medium)' },
-                    { val: 'double-tension', label: 'Uptight Weave (+40%)' },
-                  ].map((den) => (
-                    <button
-                      key={den.val}
-                      type="button"
-                      onClick={() => setWeaveDensity(den.val as any)}
-                      className={`py-2 text-[11px] font-sans font-medium border tracking-wide transition-all cursor-pointer ${
-                        weaveDensity === den.val
-                          ? 'border-[#8F533C] bg-[#8F533C]/5 text-[#8F533C] font-bold'
-                          : 'border-[#EBE4DC] text-[#615751] hover:border-[#2C2623]'
-                      }`}
-                    >
-                      {den.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Target final size preset */}
-              <div className="flex flex-col gap-1.5">
-                <label className="font-sans text-[11px] font-semibold tracking-wider text-[#615751] uppercase">
-                  Target Showroom Dimensions
-                </label>
-                <select
-                  value={customSize}
-                  onChange={(e) => setCustomSize(e.target.value)}
-                  className="p-2 text-xs font-sans border border-[#EBE4DC] bg-[#FAF8F5] text-[#2C2623] rounded-none focus:outline-[#8F533C]"
-                >
-                  <option>Accent Rug Size (120x180cm)</option>
-                  <option>Medium Dining (160x230cm)</option>
-                  <option>Large Lounge (200x300cm)</option>
-                  <option>Custom Dimension spec (Specify in msg)</option>
-                </select>
-              </div>
-
-              {/* Submission button */}
-              <button
-                type="submit"
-                disabled={swatchInquired}
-                className="w-full mt-4 py-4 bg-[#8F533C] hover:bg-[#2C2623] text-white font-button text-xs tracking-widest transition-colors duration-300 rounded-none cursor-pointer flex items-center justify-center gap-2 shadow-xs"
-              >
-                {swatchInquired ? (
-                  <>
-                    <Check size={14} className="animate-ping" />
-                    Loom Setup Saved...
-                  </>
-                ) : (
-                  <>
-                    <FileSpreadsheet size={14} />
-                    Add Swatch Request to RFQ
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
-
-          {/* Real-time Render Visualizer Canvas */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
-            
-            {/* Visualizer header */}
-            <div className="flex items-center justify-between border-b border-[#EBE4DC] pb-3 text-xs text-[#615751]">
-              <div className="flex items-center gap-1.5">
-                <Grid size={14} className="text-[#8F533C]" />
-                <span className="font-bold font-sans uppercase tracking-wider">Real-time Swatch Mockup</span>
-              </div>
-              <span className="font-mono text-[10px]">
-                {patternType.toUpperCase()} | {weaveDensity === 'double-tension' ? '420 GSM' : '300 GSM'}
-              </span>
-            </div>
-
-            {/* Simulated Grid Canvas */}
-            <div
-              className="w-full aspect-16/10 border border-[#EBE4DC] p-8 flex items-center justify-center transition-all duration-300 relative bg-[#F8F4EF]"
-              style={{
-                backgroundImage: 'radial-gradient(#E0D7CD 1px, transparent 1px)',
-                backgroundSize: '16px 16px',
-              }}
-            >
-              <div
-                className="w-full h-full max-w-[340px] aspect-square relative shadow-md overflow-hidden border border-[#EBE4DC] transition-all duration-500"
-                style={{ backgroundColor: warpColor }}
-              >
-                <div className="absolute inset-0 w-full h-full">
-                  {patternType === 'herringbone' && (
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <pattern id="herringbone-pat" width="40" height="40" patternUnits="userSpaceOnUse">
-                          <path d="M0,0 L20,20 L20,40 L0,20 Z" fill={weftColor} opacity="0.85" />
-                          <path d="M20,0 L40,20 L40,40 L20,20 Z" fill={weftColor} opacity="0.65" />
-                          <path d="M0,5 L40,5 M0,15 L40,15 M0,25 L40,25 M0,35 L40,35" stroke={warpColor} strokeWidth={weaveDensity === 'double-tension' ? '1.5' : '0.5'} opacity="0.3" />
-                        </pattern>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#herringbone-pat)" />
-                    </svg>
-                  )}
-
-                  {patternType === 'plaid' && (
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <pattern id="plaid-pat" width="60" height="60" patternUnits="userSpaceOnUse">
-                          <rect x="0" y="0" width="60" height="20" fill={weftColor} opacity="0.7" />
-                          <rect x="0" y="40" width="60" height="10" fill={weftColor} opacity="0.4" />
-                          <rect x="0" y="0" width="20" height="60" fill={weftColor} opacity="0.6" />
-                          <rect x="40" y="0" width="10" height="60" fill={weftColor} opacity="0.3" />
-                          <path d="M5,0 L5,60 M15,0 L15,60 M25,0 L25,60 M35,0 L35,60 M45,0 L45,60 M55,0 L55,60" stroke={warpColor} strokeWidth="1" opacity="0.25" />
-                          <path d="M0,5 L60,5 M0,15 L60,15 M0,25 L60,25 M0,35 L60,35 M0,45 L60,45 M0,55 L60,55" stroke={warpColor} strokeWidth="1" opacity="0.25" />
-                        </pattern>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#plaid-pat)" />
-                    </svg>
-                  )}
-
-                  {patternType === 'waffle' && (
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <pattern id="waffle-pat" width="30" height="30" patternUnits="userSpaceOnUse">
-                          <rect x="2" y="2" width="26" height="26" fill={weftColor} opacity="0.8" />
-                          <rect x="6" y="6" width="18" height="18" fill={warpColor} opacity="0.35" />
-                          <rect x="12" y="12" width="6" height="6" fill="#8F533C" opacity="0.9" />
-                          <path d="M0,15 L30,15 M15,0 L15,30" stroke={weftColor} strokeWidth={weaveDensity === 'double-tension' ? '2.5' : '1.5'} opacity="0.5" />
-                        </pattern>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#waffle-pat)" />
-                    </svg>
-                  )}
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/15 via-transparent to-white/10 pointer-events-none" />
-                <div className="absolute bottom-2 right-2 bg-black/70 px-2 py-0.5 text-[8px] font-mono text-white tracking-widest uppercase">
-                  Bespoke Loom Preview
-                </div>
-              </div>
-            </div>
-
-            {/* Spec breakdown below preview */}
-            <div className="grid grid-cols-3 gap-4 border border-[#EBE4DC] p-4 text-[11px] font-sans text-[#615751] bg-white">
-              <div>
-                <span className="font-bold text-[#2C2623] block uppercase text-[9px] tracking-wider">Pattern Structure:</span>
-                <span className="capitalize">{patternType} Weave</span>
-              </div>
-              <div>
-                <span className="font-bold text-[#2C2623] block uppercase text-[9px] tracking-wider">Loom Tension:</span>
-                <span>{weaveDensity === 'double-tension' ? 'Double high-tension (40% dense)' : 'Standard shuttle tension'}</span>
-              </div>
-              <div>
-                <span className="font-bold text-[#2C2623] block uppercase text-[9px] tracking-wider">Estimated Weaving:</span>
-                <span>14 Working Days</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
 
       {/* MODAL 1: SUBCATEGORY PRODUCTS SLIDER/MODAL (GRID OF RELEVANT WHOLESALE ITEMS) */}

@@ -1,51 +1,57 @@
 import React from 'react';
 import { Palette, Landmark, ShieldCheck, Leaf, Tag, Globe } from 'lucide-react';
 import { motion } from 'motion/react';
+import icon1 from '../assets/images/ic1.svg';
+import icon2 from '../assets/images/ic2.svg';
+import icon3 from '../assets/images/ic3.svg';
+import icon4 from '../assets/images/ic4.svg';
+import icon5 from '../assets/images/ic5.svg';
+import icon6 from '../assets/images/ic6.svg';
 
 export const WhyChooseUs: React.FC = () => {
   const benefits = [
     {
-      icon: <Palette className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
+      icon: <img src = {icon1} className="w-10 h-10 text-[#8F533C] object-contain"  />,
       title: 'DESIGN & PRODUCT DEVELOPMENT',
       description: 'Trend-driven designs and custom collections tailored to your brand.',
     },
     {
-      icon: <Landmark className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
-      title: 'AUSTRALIAN HEAD OFFICE',
+      icon: <img src = {icon2} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      title: 'AUSTRALIAN     HEAD OFFICE',
       description: 'Seamless communication and dedicated support for global buyers.',
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
+      icon:  <img src = {icon3} className="w-10 h-10 text-[#8F533C] object-contain"  />,
       title: 'MANUFACTURING EXCELLENCE',
       description: 'Skilled craftsmanship with scalable production capabilities.',
     },
     {
-      icon: <Leaf className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
+      icon:  <img src = {icon4} className="w-10 h-10 text-[#8F533C] object-contain"  />,
       title: 'SUSTAINABLE MATERIALS',
       description: 'Natural, eco-friendly fibers and responsible manufacturing.',
     },
     {
-      icon: <Tag className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
+      icon: <img src = {icon5} className="w-10 h-10 text-[#8F533C] object-contain"  />,
       title: 'PRIVATE LABEL SOLUTIONS',
       description: 'End-to-end private label services from concept to shelf.',
     },
     {
-      icon: <Globe className="w-6 h-6 text-[#8F533C]" strokeWidth={1.5} />,
+      icon:  <img src = {icon6} className="w-10 h-10 text-[#8F533C] object-contain"  />,
       title: 'EXPORT EXPERTISE',
       description: 'Documentation, compliance and logistics support for smooth exports.',
     },
   ];
 
   return (
-    <section className="py-20 bg-[#FAF8F5] border-b border-[#EBE4DC]">
+    <section className="py-20 ">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Title Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] font-medium tracking-tight">
-            Why Global Buyers Choose TanshU
+            Why Global Buyers Choose Tanshu
           </h2>
-          <div className="h-[1px] bg-[#8F533C]/30 w-16 my-1" />
+          <div className="h-[1px]  w-16 my-1" />
           <p className="font-sans text-sm sm:text-base text-[#615751] italic">
             Partner with a manufacturer that understands your market and grows with your brand.
           </p>
@@ -69,7 +75,7 @@ export const WhyChooseUs: React.FC = () => {
               
               {/* Content */}
               <div className="flex flex-col gap-1.5">
-                <h3 className="font-sans text-[10px] lg:text-xs font-bold tracking-[0.08em] text-[#2C2623] leading-snug">
+                <h3 className="font-sans text-[10px] lg:text-xs font-bold tracking-[0.10em] text-[#2C2623] leading-snug">
                   {b.title}
                 </h3>
                 <p className="font-sans text-[10px] lg:text-xs text-[#615751] leading-relaxed max-w-[150px] mx-auto font-light">
