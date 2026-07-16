@@ -5,6 +5,8 @@ import { useInquiry } from '../context/InquiryContext';
 import { TrustStats } from './TrustStats';
 import { Certifications } from './Certifications';
 import tableRunner from "../assets/images/tableRunner.jpeg"
+import springCollection from "../assets/images/Spring.png"
+import fallCollection from "../assets/images/Fall.png"
 import {
   Sparkles,
   Layers,
@@ -134,13 +136,13 @@ export const Collections: React.FC = () => {
   const seasonalCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'SPRING / SUMMER COLLECTION',
-      image: '/src/assets/images/Spring.png',
+      image: springCollection,
       itemCount: products.filter(p => p.subcategory === 'Christmas Collection').length,
       subtitle: 'Bright, Breezy, Beautiful.'
     },
     {
       name: 'FALL / WINTER COLLECTION',
-      image: '/src/assets/images/Fall.png',
+      image: fallCollection,
       itemCount: products.filter(p => p.subcategory === 'Fall Collection').length,
       subtitle: 'Warm, Cozy, Timeless.'
     }
