@@ -7,6 +7,12 @@ import { Certifications } from './Certifications';
 import tableRunner from "../assets/images/tableRunner.jpeg"
 import springCollection from "../assets/images/Spring.png"
 import fallCollection from "../assets/images/Fall.png"
+
+const localImages = import.meta.glob('../assets/images/*', { eager: true, import: 'default' }) as Record<string, string>;
+const img = (filename: string): string => {
+  const match = Object.entries(localImages).find(([path]) => path.endsWith(`/${filename}`));
+  return match ? match[1] : `/src/assets/images/${filename}`;
+};
 import {
   Sparkles,
   Layers,
@@ -55,7 +61,7 @@ export const Collections: React.FC = () => {
     },
     {
       name: 'Cushions',
-      image: '/src/assets/images/cushion_cover_fringe_1783702222647.jpg',
+      image: img('cushion_cover_fringe_1783702222647.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Cushions').length
     },
     {
@@ -71,38 +77,38 @@ export const Collections: React.FC = () => {
     },
     {
       name: 'Planters',
-      image: '/src/assets/images/basket_laundry_lid_1783701221640.jpg',
+      image: img('basket_laundry_lid_1783701221640.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Baskets').length
     },
     ,
     {
       name: 'Bath Mat',
-      image: '/src/assets/images/bath_mat_elevated_1783702711259.jpg',
+      image: img('bath_mat_elevated_1783702711259.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Bath Mat').length
     },
     {
       name: 'Table Linen',
-      image: '/src/assets/images/table_cloth_blue_1783701149774.jpg',
+      image: img('table_cloth_blue_1783701149774.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Table Linen').length
     },
     {
       name: 'Kitchen Linen',
-      image: '/src/assets/images/KitchenLinen.jpeg',
+      image: img('KitchenLinen.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Apron').length
     },
     {
       name: 'Tote Bags',
-      image: '/src/assets/images/tote_cork_printed_1783702802046.jpg',
+      image: img('tote_cork_printed_1783702802046.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Tote Bags').length
     },
     {
       name: 'Wall Décor',
-      image: '/src/assets/images/wall_decor_macrame_1783701205440.jpg',
+      image: img('wall_decor_macrame_1783701205440.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Wall Décor').length
     },
     {
       name: 'Seasonal Collections',
-      image: '/src/assets/images/SeasonalCollections.jpeg',
+      image: img('SeasonalCollections.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Table Placemat').length
     }
   ], []);
@@ -116,18 +122,18 @@ export const Collections: React.FC = () => {
     },
       {
       name: 'Pet Mat',
-      image: '/src/assets/images/pet_jute_mat_1783701244799.jpg',
+      image: img('pet_jute_mat_1783701244799.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Mat').length
     },
    
     {
       name: 'Pet Toy Baskets',
-      image: '/src/assets/images/basket_rope_twotone_1783702315626.jpg',
+      image: img('basket_rope_twotone_1783702315626.jpg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Toy Baskets').length
     },
    {
       name: 'Pet Accessories',
-      image: '/src/assets/images/petAccessories.jpeg',
+      image: img('petAccessories.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Accessories').length
     },
   ], []);
