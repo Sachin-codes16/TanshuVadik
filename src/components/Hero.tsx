@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Play, Sparkles } from 'lucide-react';
+import { ChevronDown, Play } from 'lucide-react';
 import { motion } from 'motion/react';
 import bannerDogVideo from "../assets/banner-dog.mp4";
 
@@ -35,17 +35,6 @@ export const Hero: React.FC = () => {
         {/* Left Side: Typography content */}
         <div className="lg:col-span-8 flex flex-col items-start gap-6 text-white">
           
-          {/* Tagline Badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 bg-[#8F533C]/20 border border-[#8F533C]/40 px-3 py-1.5 text-[10px] font-bold tracking-[0.25em] text-[#E0D7CD] uppercase"
-          >
-            <Sparkles size={11} className="text-[#8F533C]" />
-            ESTABLISHED IN INDIA. EXPORTED WORLDWIDE
-          </motion.div>
-
           {/* Headline matches the mockup perfectly */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

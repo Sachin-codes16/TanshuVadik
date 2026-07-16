@@ -112,12 +112,12 @@ export const Certifications: React.FC = () => {
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-[#FAF8F5] border-b border-[#EBE4DC]">
+    <section id="certifications" className="py-10 bg-[#FAF8F5] border-b border-[#EBE4DC]">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column - Editorial Text */}
-          <div className="lg:col-span-4 flex flex-col items-start gap-4">
+          <div className="lg:col-span-4 flex flex-col items-start gap-4 bg-[#EBE4DC] p-8">
             <span className="font-sans text-[11px] font-bold tracking-[0.25em] text-[#8F533C] uppercase">
               CERTIFIED. ETHICAL. RESPONSIBLE.
             </span>
@@ -139,7 +139,7 @@ export const Certifications: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex flex-col items-center text-center gap-3 bg-white border border-[#EBE4DC]/60 p-5 shadow-xs w-full max-w-[140px] hover:border-[#8F533C]/30 hover:shadow-sm transition-all duration-300"
+                  className="flex flex-col items-center text-center gap-3 p-5 w-full max-w-[140px] transition-all duration-300"
                 >
                   {/* Circle SVG */}
                   <div className="w-16 h-16 flex items-center justify-center">

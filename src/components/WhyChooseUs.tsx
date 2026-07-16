@@ -11,32 +11,32 @@ import icon6 from '../assets/images/ic6.svg';
 export const WhyChooseUs: React.FC = () => {
   const benefits = [
     {
-      icon: <img src = {icon1} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon: <img src = {icon1} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'DESIGN & PRODUCT DEVELOPMENT',
       description: 'Trend-driven designs and custom collections tailored to your brand.',
     },
     {
-      icon: <img src = {icon2} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon: <img src = {icon2} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'AUSTRALIAN     HEAD OFFICE',
       description: 'Seamless communication and dedicated support for global buyers.',
     },
     {
-      icon:  <img src = {icon3} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon:  <img src = {icon3} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'MANUFACTURING EXCELLENCE',
       description: 'Skilled craftsmanship with scalable production capabilities.',
     },
     {
-      icon:  <img src = {icon4} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon:  <img src = {icon4} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'SUSTAINABLE MATERIALS',
       description: 'Natural, eco-friendly fibers and responsible manufacturing.',
     },
     {
-      icon: <img src = {icon5} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon: <img src = {icon5} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'PRIVATE LABEL SOLUTIONS',
       description: 'End-to-end private label services from concept to shelf.',
     },
     {
-      icon:  <img src = {icon6} className="w-10 h-10 text-[#8F533C] object-contain"  />,
+      icon:  <img src = {icon6} className="w-16 h-16 text-[#8F533C] object-contain mix-blend-multiply"  />,
       title: 'EXPORT EXPERTISE',
       description: 'Documentation, compliance and logistics support for smooth exports.',
     },
@@ -47,7 +47,7 @@ export const WhyChooseUs: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Title Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center gap-3">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] font-medium tracking-tight">
             Why Global Buyers Choose Tanshu
           </h2>
@@ -68,8 +68,8 @@ export const WhyChooseUs: React.FC = () => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="flex flex-col items-center gap-3.5 group"
             >
-              {/* Icon Circle */}
-              <div className="w-12 h-12 rounded-full border border-[#EBE4DC] bg-white flex items-center justify-center shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-sm transition-all duration-300 shrink-0">
+              {/* Icon */}
+              <div className="w-16 h-16 flex items-center justify-center shrink-0">
                 {b.icon}
               </div>
               

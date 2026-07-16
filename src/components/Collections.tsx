@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { products } from '../data';
 import { Product } from '../types';
 import { useInquiry } from '../context/InquiryContext';
+import { TrustStats } from './TrustStats';
+import { Certifications } from './Certifications';
 import tableRunner from "../assets/images/tableRunner.jpeg"
 import {
   Sparkles,
@@ -12,7 +14,6 @@ import {
   FileSpreadsheet,
   Settings,
   Grid,
-  ChevronRight,
   Info
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -133,13 +134,13 @@ export const Collections: React.FC = () => {
   const seasonalCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'SPRING / SUMMER COLLECTION',
-      image: '/src/assets/images/SummerCollections.jpeg',
+      image: '/src/assets/images/Spring.png',
       itemCount: products.filter(p => p.subcategory === 'Christmas Collection').length,
       subtitle: 'Bright, Breezy, Beautiful.'
     },
     {
       name: 'FALL / WINTER COLLECTION',
-      image: '/src/assets/images/winterCollections.jpeg',
+      image: '/src/assets/images/Fall.png',
       itemCount: products.filter(p => p.subcategory === 'Fall Collection').length,
       subtitle: 'Warm, Cozy, Timeless.'
     }
@@ -187,13 +188,17 @@ export const Collections: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Editorial Heading Section exactly styled like the mockup */}
-        <div className="flex flex-col items-center text-center gap-3 mb-20 max-w-3xl mx-auto">
-    
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2C2623] tracking-tight font-medium leading-tight">
-            OUR COLLECTIONS
-          </h2>
-          
-          
+        <div className="flex flex-col items-center text-center gap-3 mb-14">
+
+          <div className="flex items-center gap-6 w-full">
+            <div className="h-px bg-[#8F533C]/20 flex-1" />
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2C2623] tracking-tight font-medium leading-tight whitespace-nowrap shrink-0">
+              OUR COLLECTIONS
+            </h2>
+            <div className="h-px bg-[#8F533C]/20 flex-1" />
+          </div>
+
+
           {/* Mockup Ornament divider (brown line with diamond) */}
           <div className="flex items-center gap-4 w-full justify-center my-3">
 
@@ -207,7 +212,7 @@ export const Collections: React.FC = () => {
 
         {/* 1. HOME DECOR SECTION */}
         <div className="mb-24">
-          <div className="flex flex-col items-start mb-8 border-b border-[#EBE4DC] pb-4">
+          <div className="flex flex-col items-start mb-6 border-b border-[#EBE4DC] pb-4">
             <h3 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-wide">
               HOME DÉCOR COLLECTION
             </h3>
@@ -229,7 +234,7 @@ export const Collections: React.FC = () => {
                 className="group cursor-pointer flex flex-col"
               >
                 {/* Image Container with high contrast and hover zooms */}
-                <div className="relative aspect-square overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
                   <img
                     src={cat.image}
                     alt={cat.name}
@@ -237,12 +242,6 @@ export const Collections: React.FC = () => {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                   />
-                  {/* Floating Action Button */}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/15 transition-colors duration-300 flex items-end justify-end p-3">
-                    <div className="bg-white/95 backdrop-blur-xs border border-[#EBE4DC] w-8 h-8 flex items-center justify-center text-[#2C2623] group-hover:bg-[#8F533C] group-hover:text-white transition-all duration-300 shadow-sm">
-                      <ChevronRight size={16} />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Subcategory Label below card */}
@@ -260,8 +259,8 @@ export const Collections: React.FC = () => {
         </div>
 
         {/* 2. PET LIVING SECTION */}
-        <div className="mb-24">
-          <div className="flex flex-col items-start mb-8 border-b border-[#EBE4DC] pb-4">
+        <div className="mb-4">
+          <div className="flex flex-col items-start mb-6 border-b border-[#EBE4DC] pb-4">
             <h3 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-wide">
               PET LIVING COLLECTION
             </h3>
@@ -283,7 +282,7 @@ export const Collections: React.FC = () => {
                 className="group cursor-pointer flex flex-col"
               >
                 {/* Image Container with high contrast and hover zooms */}
-                <div className="relative aspect-square overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
                   <img
                     src={cat.image}
                     alt={cat.name}
@@ -291,12 +290,6 @@ export const Collections: React.FC = () => {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                   />
-                  {/* Floating Action Button */}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-black/15 transition-colors duration-300 flex items-end justify-end p-3">
-                    <div className="bg-white/95 backdrop-blur-xs border border-[#EBE4DC] w-8 h-8 flex items-center justify-center text-[#2C2623] group-hover:bg-[#8F533C] group-hover:text-white transition-all duration-300 shadow-sm">
-                      <ChevronRight size={16} />
-                    </div>
-                  </div>
                 </div>
 
                 {/* Subcategory Label below card */}
@@ -313,62 +306,54 @@ export const Collections: React.FC = () => {
           </div>
         </div>
 
-        {/* 3. SEASONAL COLLECTIONS */}
-        <div className="mb-24">
-          <div className="flex flex-col items-start mb-8 border-b border-[#EBE4DC] pb-4">
-            <h3 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-wide">
-              SEASONAL & HOLIDAY COLLECTIONS
-            </h3>
-            <p className="font-sans text-xs sm:text-sm text-[#615751] italic mt-1">
-              Bespoke curation for seasonal styling and festive celebrations.
-            </p>
-          </div>
+        {/* Seasonal & Holiday images, fixed directly below Pet Living (heading removed) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 mb-24">
+          {seasonalCategories.map((category) => (
+            <div
+              key={category.name}
+              className="relative group overflow-hidden cursor-pointer w-full aspect-[2/1]"
+              onClick={() => setSelectedCategory(category.name)}
+            >
+              {/* 1. Image Background */}
+              <img
+                src={category.image}
+                alt={category.name}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-          {/* 2-Column Responsive Layout for Editorial Cards */}
-         {/* Seasonal Collections Grid Section */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
-  {seasonalCategories.map((category) => (
-    <div 
-      key={category.name} 
-      className="relative group overflow-hidden cursor-pointer w-full aspect-[4/3] md:aspect-[16/11]"
-      onClick={() => setSelectedCategory(category.name)}
-    >
-      {/* 1. Image Background */}
-      <img 
-        src={category.image} 
-        alt={category.name} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      
-      {/* 2. Dark Tint Overlay for Readable Text */}
-      <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
+              {category.image.endsWith('.png') ? null : (
+                <>
+                  {/* 2. Dark Tint Overlay for Readable Text */}
+                  <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
 
-      {/* 3. Centered Absolute Content Box */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-white">
-        <h3 className="font-serif text-2xl md:text-3xl tracking-widest uppercase mb-2">
-          {category.name}
-        </h3>
-        
-        {category.subtitle && (
-          <p className="font-serif italic text-sm md:text-base opacity-90 mb-6 tracking-wide">
-            {category.subtitle}
-          </p>
-        )}
-        
-        {/* Bordered Button Element */}
-        <button className="px-6 py-2.5 border border-white text-xs uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black">
-          Explore Now &rarr;
-        </button>
-      </div>
-    </div>
-  ))}
-</div>
+                  {/* 3. Centered Absolute Content Box */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-white">
+                    <h3 className="font-serif text-2xl md:text-3xl tracking-widest uppercase mb-2">
+                      {category.name}
+                    </h3>
+
+                    {category.subtitle && (
+                      <p className="font-serif italic text-sm md:text-base opacity-90 mb-6 tracking-wide">
+                        {category.subtitle}
+                      </p>
+                    )}
+
+                    {/* Bordered Button Element */}
+                    <button className="px-6 py-2.5 border border-white text-xs uppercase tracking-widest transition-all duration-300 hover:bg-white hover:text-black">
+                      Explore Now &rarr;
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
         </div>
 
-
-    
-                
       </div>
+
+      {/* Trust & Certification badges, fixed directly below Pet Living */}
+      <TrustStats />
+      <Certifications />
 
       {/* MODAL 1: SUBCATEGORY PRODUCTS SLIDER/MODAL (GRID OF RELEVANT WHOLESALE ITEMS) */}
       <AnimatePresence>

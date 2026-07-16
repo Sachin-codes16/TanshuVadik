@@ -88,37 +88,37 @@ import icon6 from "../assets/images/ico-f.svg";
 export const TrustStats: React.FC = () => {
   const stats = [
     {
-      icon:< img src={icon1} className=" w-full h-full object-cover" />,
+      icon:< img src={icon1} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: '20+',
       label: 'Product Categories',
     },
     {
-      icon: < img src={icon2} className=" w-full h-full object-cover" />,
+      icon: < img src={icon2} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: '100+',
       label: 'Skilled Artisans',
     },
     {
-      icon:< img src={icon3} className=" w-full h-full object-cover" />,
+      icon:< img src={icon3} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: 'Custom',
       label: 'Manufacturing',
     },
     {
-      icon: < img src={icon4} className=" w-full h-full object-cover" />,
+      icon: < img src={icon4} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: 'OEM &',
       label: 'Private Label\nSolutions',
     },
     {
-      icon: < img src={icon5} className=" w-full h-full object-cover" />,
+      icon: < img src={icon5} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: 'Low MOQ',
       label: 'Flexible Volumes',
     },
     {
-      icon: < img src={icon6} className=" w-full h-full object-cover" />,
+      icon: < img src={icon6} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: 'Quality',
       label: 'Assurance At\nEvery Step',
     },
     {
-      icon:< img src={icon1} className=" w-full h-full object-cover" />,
+      icon:< img src={icon1} className=" w-full h-full object-contain mix-blend-multiply" />,
       value: 'Global Shipping',
       label: 'Worldwide\nDelivery',
     },
@@ -136,7 +136,7 @@ return (
               transition={{ duration: 0.3, delay: index * 0.04 }}
               className="flex flex-row items-center gap-3 text-left w-full max-w-[160px]"
             >
-              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#EBE4DC] flex items-center justify-center">
                 {s.icon}
               </div>
 

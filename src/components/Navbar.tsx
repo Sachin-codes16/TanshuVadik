@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, Mail, ClipboardList } from 'lucide-react';
 import { useInquiry } from '../context/InquiryContext';
 import { motion, AnimatePresence } from 'motion/react';
+import tanshuLogo from '../assets/images/Tanshulogo.png';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { cart, setIsPortalOpen } = useInquiry();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const menuItems = [
     { label: 'ABOUT US', href: '#heritage' },
@@ -28,22 +20,17 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       id="navbar-root"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EBE4DC] py-4 shadow-xs'
-          : 'bg-[#FAF8F5]/70 backdrop-blur-xs py-5 border-b border-transparent'
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EBE4DC] py-4 shadow-xs"
     >
       <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
         
         {/* Brand Logo exactly as requested */}
-        <a href="#" className="flex flex-col select-none group leading-tight shrink-0">
-          <span className="font-serif text-base sm:text-lg md:text-xl font-bold tracking-[0.06em] text-[#2C2623] group-hover:text-[#8F533C] transition-colors uppercase">
-            TANSHU VAIDIK
-          </span>
-          <span className="font-sans text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.05em] text-[#615751] uppercase">
-            India Pvt. Ltd.
-          </span>
+        <a href="#" className="flex items-center select-none group shrink-0">
+          <img
+            src={tanshuLogo}
+            alt="Tanshu Vaidik India Pvt. Ltd."
+            className="h-9 sm:h-11 md:h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Links with active underline micro-interactions - visible from md screen up */}
