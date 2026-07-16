@@ -23,7 +23,7 @@ const routes = pins.filter((p) => !p.isHub);
 
 export const GlobalPresence: React.FC = () => {
   return (
-    <section id="presence" className="pt-24 pb-10 bg-[#FAF8F5]">
+    <section id="presence" className="pt-3 pb-10 bg-[#FAF8F5]">
       <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         {/* LEFT: Heading & CTA */}
@@ -78,10 +78,10 @@ export const GlobalPresence: React.FC = () => {
                   key={p.label}
                   d={`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`}
                   fill="none"
-                  stroke="#8F533C"
-                  strokeWidth="0.3"
+                  stroke="#000000"
+                  strokeWidth="0.5"
                   strokeDasharray="1.5 1.5"
-                  opacity="0.5"
+                  opacity="0.85"
                   vectorEffect="non-scaling-stroke"
                 />
               );

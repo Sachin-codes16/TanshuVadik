@@ -7,10 +7,10 @@ export const About: React.FC = () => {
       id="heritage"
       className="pt-14 sm:pt-16 bg-[#FAF8F5] border-t border-[#EBE4DC]"
     >
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-[3fr_2fr] items-start">
 
         {/* LEFT SIDE: Artisan Image */}
-        <div className="relative w-full h-72 sm:h-96 lg:h-auto overflow-hidden">
+        <div className="relative w-full h-20 sm:h-28 lg:h-auto overflow-hidden">
           <img
             src={heartBehindImage}
             alt="Master artisan hand-detailing a woven rug"
@@ -20,14 +20,14 @@ export const About: React.FC = () => {
         </div>
 
         {/* RIGHT SIDE: Editorial Content */}
-        <div className="flex flex-col justify-center gap-4 p-8 sm:p-12 lg:p-16">
+        <div className="flex flex-col justify-start gap-4 px-8 sm:px-12 lg:px-16 pt-0 pb-4 sm:pb-6 lg:pb-8">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] tracking-tight font-medium leading-tight">
             The Heart Behind Every Piece
           </h2>
-          <p className="font-sans text-sm sm:text-base text-[#615751] leading-relaxed font-light">
+          <p className="font-sans text-sm sm:text-base text-[#615751] leading-relaxed font-medium">
             Our artisans bring generations of skill, care and passion to everything we create.
           </p>
-          <p className="font-sans text-sm sm:text-base text-[#615751] leading-relaxed font-light">
+          <p className="font-sans text-sm sm:text-base text-[#615751] leading-relaxed font-medium">
             Every product is made with care in every detail, designed to last long.
           </p>
           <a

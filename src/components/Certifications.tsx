@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Award, ShieldAlert, CheckCircle } from 'lucide-react';
 import iso1logo  from "../assets/images/iso1.png";
+import iso9001Logo from "../assets/images/ISO logo copy.png";
 import grs from "../assets/images/Global+Recycled+Standard.webp";
 import gmp from "../assets/images/gmp.webp";
 import sedex from "../assets/images/sedex-logo_brandlogos.net_elidv-512x137.png";
@@ -20,7 +21,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="62" textAnchor="middle" fill="#8F533C" fontSize="10" fontWeight="bold" fontFamily="sans-serif">9001:2015</text>
         //   <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">CERTIFIED</text>
         // </svg>
-        <img src={iso1logo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
+        <img src={iso9001Logo} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain" />
       ),
       description: '9001:2015',
     },
@@ -37,7 +38,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="74" textAnchor="middle" fill="#615751" fontSize="7" tracking-wider fontFamily="sans-serif">ENVIRONMENTAL</text>
         // </svg>
 
-        <img src={iso1logo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
+        <img src={iso1logo} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain" />
       ),
       description: '14001:2015',
     },
@@ -54,7 +55,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="90" textAnchor="middle" fill="#615751" fontSize="8" fontFamily="sans-serif">Member</text>
         // </svg>
 
-        <img src={sedex} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
+        <img src={sedex} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain" />
       ),
       description: 'Member',
     },
@@ -72,7 +73,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="58" textAnchor="middle" fill="#615751" fontSize="9" fontWeight="bold" fontFamily="sans-serif">Standard</text>
         // </svg>
 
-           <img src={grs} alt="GRS logo" className="w-18 h-18 object-cover" />
+           <img src={grs} alt="GRS logo" className="w-20 h-20 object-cover" />
         
       ),
       description: 'Standard',
@@ -89,7 +90,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="78" textAnchor="middle" fill="#8F533C" fontSize="14" fontWeight="bold" fontFamily="sans-serif">GMO</text>
         // </svg>
 
-        <img src={nongmo} alt="ISO 9001:2015 logo" className="w-12 h-12 object-contain" />
+        <img src={nongmo} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain" />
       ),
       description: 'Project Verified',
     },
@@ -105,7 +106,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="87" textAnchor="middle" fill="#615751" fontSize="7" tracking-widest fontFamily="sans-serif">PRACTICE CERTIFICATE</text>
         // </svg>
 
-          <img src={gmp} alt="gmp logo" className="w-12 h-12 object-contain" />
+          <img src={gmp} alt="gmp logo" className="w-16 h-16 object-contain" />
       ),
       description: 'Practice Certificate',
     },
