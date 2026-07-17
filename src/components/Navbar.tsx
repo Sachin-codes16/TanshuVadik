@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed top-[72px] left-0 w-full bg-[#FAF8F5] border-b border-[#EBE4DC] px-6 py-8 flex flex-col gap-6 z-40 shadow-lg"
+            className="md:hidden fixed top-[72px] left-0 w-full bg-[#FAF8F5] border-b border-[#EBE4DC] px-6 py-8 flex flex-col gap-6 z-40 shadow-lg"
           >
             {menuItems.map((item) => (
               <a

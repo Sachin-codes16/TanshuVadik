@@ -7,10 +7,10 @@ export const About: React.FC = () => {
       id="heritage"
       className="pt-14 sm:pt-16 bg-[#FAF8F5] border-t border-[#EBE4DC]"
     >
-      <div className="max-w-[1280px] mx-auto grid grid-cols-[3fr_2fr] items-start">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start">
 
         {/* LEFT SIDE: Artisan Image */}
-        <div className="relative w-full h-20 sm:h-28 lg:h-auto overflow-hidden">
+        <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden">
           <img
             src={heartBehindImage}
             alt="Master artisan hand-detailing a woven rug"
@@ -20,7 +20,7 @@ export const About: React.FC = () => {
         </div>
 
         {/* RIGHT SIDE: Editorial Content */}
-        <div className="flex flex-col justify-start gap-4 px-8 sm:px-12 lg:px-16 pt-0 pb-4 sm:pb-6 lg:pb-8">
+        <div className="flex flex-col justify-start gap-4 px-6 sm:px-12 lg:px-16 pt-6 lg:pt-0 pb-8 sm:pb-6 lg:pb-8">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] tracking-tight font-medium leading-tight">
             The Heart Behind Every Piece
           </h2>

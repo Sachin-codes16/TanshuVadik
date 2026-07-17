@@ -19,7 +19,13 @@ export const Hero: React.FC = () => {
         /> */}
 
         
-        <video width="100%" height="auto" controls autoPlay loop muted playsInline >
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
          <source src ={bannerDogVideo} type="video/mp4" />
          your browser doesnot support the video tag
         </video>

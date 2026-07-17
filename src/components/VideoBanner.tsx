@@ -7,7 +7,7 @@ export const VideoBanner: React.FC = () => {
 
   return (
     <>
-      <section className="relative h-[420px] flex items-center justify-center overflow-hidden bg-[#2C2623]">
+      <section className="relative min-h-[360px] sm:h-[420px] py-16 sm:py-0 flex items-center justify-center overflow-hidden bg-[#2C2623]">
         {/* Background image with parallax-like styling and deep dark overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -58,7 +58,7 @@ export const VideoBanner: React.FC = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#FAF8F5] border border-[#EBE4DC] w-full max-w-3xl overflow-hidden relative shadow-2xl rounded-none p-8 md:p-12 flex flex-col gap-6"
+              className="bg-[#FAF8F5] border border-[#EBE4DC] w-full max-w-3xl relative shadow-2xl rounded-none p-5 sm:p-8 md:p-12 flex flex-col gap-6 max-h-[90vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button

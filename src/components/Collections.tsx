@@ -198,9 +198,9 @@ export const Collections: React.FC = () => {
         {/* Editorial Heading Section exactly styled like the mockup */}
         <div className="flex flex-col items-center text-center gap-3 mb-14">
 
-          <div className="flex items-center gap-6 w-full">
+          <div className="flex items-center gap-3 sm:gap-6 w-full">
             <div className="h-px bg-[#8F533C]/20 flex-1" />
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2C2623] tracking-tight font-medium leading-tight whitespace-nowrap shrink-0">
+            <h2 className="font-serif text-2xl sm:text-5xl lg:text-6xl text-[#2C2623] tracking-tight font-medium leading-tight whitespace-nowrap shrink-0">
               OUR COLLECTIONS
             </h2>
             <div className="h-px bg-[#8F533C]/20 flex-1" />

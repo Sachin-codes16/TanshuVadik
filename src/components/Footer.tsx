@@ -132,24 +132,18 @@ export const Footer: React.FC = () => {
         color: `${DARK}e6`,
       }}
     >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '38% 1fr',
-          alignItems: 'stretch',
-        }}
-      >
+      <div className="grid grid-cols-1 lg:grid-cols-[38%_1fr] items-stretch">
         {/* ---------------- Bestselling Collection CTA ---------------- */}
         <div
           style={{
             background: DARK,
-            padding: '56px 40px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'flex-start',
             gap: 16,
           }}
+          className="px-6 py-10 sm:px-10 sm:py-12 lg:px-10 lg:py-14"
         >
           <h4
             style={{
@@ -176,7 +170,7 @@ export const Footer: React.FC = () => {
             Whether you are launching a new brand or expanding your existing
             range, we are here to bring your vision to life.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'nowrap', gap: 10, marginTop: 4 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 4 }}>
             <button
               onMouseEnter={() => setReqHover(true)}
               onMouseLeave={() => setReqHover(false)}
@@ -224,12 +218,9 @@ export const Footer: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '280px 170px 210px',
-            justifyContent: 'space-between',
-            gap: 40,
             alignItems: 'flex-start',
-            padding: '32px 48px 4px 56px',
           }}
+          className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-[280px_170px_210px] justify-between gap-8 lg:gap-10 px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-8 lg:pb-1"
         >
 
         {/* ---------------- Stay Updated ---------------- */}
