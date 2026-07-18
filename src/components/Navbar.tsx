@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
         
         {/* Brand Logo exactly as requested */}
-        <a href="#" className="flex items-center select-none group shrink-0">
+        <a href="#" className="flex items-center select-none group shrink-0 -ml-3 sm:-ml-4 mr-4 sm:mr-8 lg:mr-12">
           <img
             src={tanshuLogo}
             alt="Tanshu Vaidik India Pvt. Ltd."
@@ -34,7 +34,7 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Links with active underline micro-interactions - visible from md screen up */}
-        <div className="hidden md:flex items-center gap-4 lg:gap-7 shrink-0">
+        <div className="hidden md:flex items-center gap-5 lg:gap-9 shrink-0">
           {menuItems.map((item) => (
             <a
               key={item.label}
@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Action Button & Inquiry Badge */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-4 lg:ml-10">
           
           {/* REQUEST CATALOGUE CTA (with optional badge) */}
           <button
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
           {/* Envelope/Mail Icon */}
           <a
             href="mailto:info@tanshuvaidik.com.au"
-            className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#EBE4DC] hover:border-[#8F533C] hover:text-[#8F533C] text-[#2C2623] transition-colors shrink-0"
+            className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#EBE4DC] hover:border-[#8F533C] hover:text-[#8F533C] text-[#2C2623] transition-colors shrink-0 ml-2"
             title="Email us directly"
           >
             <Mail size={14} />

@@ -4,9 +4,9 @@ import { Product } from '../types';
 import { useInquiry } from '../context/InquiryContext';
 import { TrustStats } from './TrustStats';
 import { Certifications } from './Certifications';
-import tableRunner from "../assets/images/tableRunner.jpeg"
 import springCollection from "../assets/images/Spring.png"
 import fallCollection from "../assets/images/Fall.png"
+import rugsImage from "../assets/images/Rug.jpeg"
 
 const localImages = import.meta.glob('../assets/images/*', { eager: true, import: 'default' }) as Record<string, string>;
 const img = (filename: string): string => {
@@ -51,63 +51,62 @@ export const Collections: React.FC = () => {
   const homeDecorCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'Rugs',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATrToO0vT5DjdiIY3o0eIyzjxqWxy0qvf1URLnf0a8R1F96LL7IEkXdZqnYCyHvyrtDzJLU_3SYZRVU1532myS-VrIbDbveLLPdFHekV4-5jLd3RYyX-SXCEDlBO4ZW7Ndk4ia2dEYFDCw26xy-ztWcCORZPdl34jz14n1RL_NpURdnoKgccKrTcX9PI1UYR683fu7J6xKeMu5OGErdY2VEqU8VoMxH1pisdSbuDt3TMuLLUgKu2gy_UghdZ7KW41ZSt6mAS7FjXA',
+      image: rugsImage,
       itemCount: products.filter(p => p.subcategory === 'Rugs').length
     },
     {
       name: 'Carpets',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCsPlfL1NGV_uz3NLYgrSniRCBhyLaEAY7g4m-VGltPLiYLjKD4zl2GRZIc2sxuxCymftPgZvuWJ9xtoeraur2NZKDV9RkI-1KPUclzGcnTMMpGr0pPNCigL5XthDY_5ETpUSgDVJSGpmtueqy3WyQzZgrn9BxgO5Jt0P99JjZYfR7KRQLGk2XHBsbLW-RvIChkFpJg4wBzE05SeI01PBxh4Ri-JVQPlgzf3yy6MxCdQra39Z2cZ9c3DGXdHFGQ0N8EGbLdWzrSKfs',
+      image: img('WhatsApp Image 2026-07-18 at 11.12.09.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Carpets').length
     },
     {
       name: 'Cushions',
-      image: img('cushion_cover_fringe_1783702222647.jpg'),
+      image: img('cushion.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Cushions').length
     },
     {
       name: 'Throws',
-    
-      image: tableRunner,
+      image: img('WhatsApp Image 2026-07-17 at 15.35.38.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Kitchen Towel').length
     },
     {
       name: 'Basket',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7Le82mV7Pp_UY_dNHQOEnzKExz7Bq2BrwdrtxT2WLrDeqVU2clE5s-S_KB_RCl1ZWGXG0Zhfz1iDG_JIarEof3_JjkNHh9A1Uh1hX6LAKEUjgRgHd2o0LdGbNhXIbMHIuxDtArNJ6HaZ_4ACeleHYYvQytwTDn-tJbLXMMqVgbA_V5CgXmGqxbWaSo2LOOCFem0NLgfwFHtN85xTtCBubF4GdeiYrxnb8OwYDhtmbZERyjIt0FwxqoXFqUJKgXfXrRxRVluXhBo8',
+      image: img('WhatsApp Image 2026-07-17 at 18.18.39.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Basket').length
     },
     {
       name: 'Planters',
-      image: img('basket_laundry_lid_1783701221640.jpg'),
-      itemCount: products.filter(p => p.subcategory === 'Pet Baskets').length
+      image: img('WhatsApp Image 2026-07-17 at 15.35.57.jpeg'),
+      itemCount: products.filter(p => p.subcategory === 'Planters').length
     },
     ,
     {
-      name: 'Bath Mat',
-      image: img('bath_mat_elevated_1783702711259.jpg'),
-      itemCount: products.filter(p => p.subcategory === 'Bath Mat').length
+      name: 'Bath Mats',
+      image: img('WhatsApp Image 2026-07-17 at 15.35.01.jpeg'),
+      itemCount: products.filter(p => p.subcategory === 'Bath Mats').length
     },
     {
       name: 'Table Linen',
-      image: img('table_cloth_blue_1783701149774.jpg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.40.03.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Table Linen').length
     },
     {
       name: 'Kitchen Linen',
-      image: img('KitchenLinen.jpeg'),
+      image: img('WhatsApp Image 2026-07-17 at 17.34.06.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Apron').length
     },
     {
       name: 'Tote Bags',
-      image: img('tote_cork_printed_1783702802046.jpg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.38.11.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Tote Bags').length
     },
     {
       name: 'Wall Décor',
-      image: img('wall_decor_macrame_1783701205440.jpg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.37.21.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Wall Décor').length
     },
     {
-      name: 'Seasonal Collections',
+      name: 'Home Accessories',
       image: img('SeasonalCollections.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Table Placemat').length
     }
@@ -117,23 +116,23 @@ export const Collections: React.FC = () => {
   const petLivingCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'Pet Beds',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDiugj9V-Quo1PozNT5q1D1iancbI_mURD7GiOxGKWhC7ubGzoDRR7ABJKYIKapIQOhndU8DiBERRXR_FZJJqYzP7MH5I5DjVI67tyd--_W8zC_zqeP_uzBnEnpadDJG5Lk9pySdX2G3T7jePtZXgEqH2OE3Tot3eM5V99hvIu6hThtM_sp7Z5J5IGK3dWKpH9Kuw6b3iZG4DywroXWzJCI00dJ89KHf_wjkHbtXkPkC6XcHLKtWqm4pmGZUOLruH1xzHjW8okHeb0',
+      image: img('WhatsApp Image 2026-07-17 at 15.38.35.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Beds').length
     },
       {
       name: 'Pet Mat',
-      image: img('pet_jute_mat_1783701244799.jpg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.38.51.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Mat').length
     },
    
     {
       name: 'Pet Toy Baskets',
-      image: img('basket_rope_twotone_1783702315626.jpg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.34.24.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Toy Baskets').length
     },
    {
       name: 'Pet Accessories',
-      image: img('petAccessories.jpeg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.36.54.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Pet Accessories').length
     },
   ], []);
@@ -163,6 +162,15 @@ export const Collections: React.FC = () => {
     }
     if (lowerSel.includes('fall') || lowerSel.includes('winter')) {
       return products.filter((p) => p.subcategory === 'Fall Collection');
+    }
+    if (lowerSel === 'kitchen linen') {
+      return products.filter((p) => p.subcategory === 'Apron');
+    }
+    if (lowerSel === 'throws') {
+      return products.filter((p) => p.subcategory === 'Kitchen Towel');
+    }
+    if (lowerSel === 'home accessories') {
+      return products.filter((p) => p.subcategory === 'Table Placemat');
     }
     return products.filter((p) => p.subcategory.toLowerCase() === lowerSel);
   }, [selectedCategory]);
@@ -242,7 +250,10 @@ export const Collections: React.FC = () => {
                 className="group cursor-pointer flex flex-col"
               >
                 {/* Image Container with high contrast and hover zooms */}
-                <div className="relative aspect-video overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300">
+                <div
+                  className="relative overflow-hidden bg-[#F4EFEA] border border-[#EBE4DC] shadow-xs group-hover:border-[#8F533C]/40 group-hover:shadow-md transition-all duration-300"
+                  style={{ aspectRatio: cat.name === 'Basket' ? '568 / 316' : '16 / 9' }}
+                >
                   <img
                     src={cat.image}
                     alt={cat.name}
@@ -256,9 +267,6 @@ export const Collections: React.FC = () => {
                 <div className="mt-3 flex items-center justify-between">
                   <span className="font-sans text-[13px] font-bold tracking-[0.12em] text-[#2C2623] uppercase group-hover:text-[#8F533C] transition-colors">
                     {cat.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#8F533C]/80 font-semibold bg-[#8F533C]/5 px-2 py-0.5 border border-[#8F533C]/10">
-                    {cat.itemCount > 0 ? `${cat.itemCount} Items` : 'Catalog'}
                   </span>
                 </div>
               </motion.div>

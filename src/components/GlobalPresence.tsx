@@ -51,10 +51,10 @@ export const GlobalPresence: React.FC = () => {
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKoBaZ0rlNuVgvn47qrRsUDQbdiBYpjU-81mJ_vel0IDu420_Ch2NDLggsvqUgXzBkfiTkhHB0Tj82HiqlpVXvQ0mKc6n4nuHOgHFodeDf4nJZyQDAP0p3S0tD2OIXoTdeIETmeJ64XHo54RsL7Uuo7ysZp7xh-KXmVKAFWMxdZEb6x-nA4vPRReQTpWg0ruQz09s5_DFhgLWR3NQ87YU8MLP9Zhxg9SCXS6TiEdf1unyi-g8NH1KhJQv14ixzON7lUVtlazRBJ4A"
             alt="World trade route map"
-            className="absolute left-0 w-full object-cover opacity-5"
+            className="absolute left-0 w-full object-cover opacity-25"
             referrerPolicy="no-referrer"
             style={{
-              filter: 'grayscale(1) brightness(1.6)',
+              filter: 'grayscale(1) brightness(0.8)',
               top: '-22%',
               height: '140%',
             }}
