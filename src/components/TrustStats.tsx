@@ -124,9 +124,10 @@ export const TrustStats: React.FC = () => {
     },
   ];
 return (
-    <section className="bg-white border-y border-[#EBE4DC] py-3">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-4 gap-y-6 items-center justify-items-start lg:justify-items-center">
+    <section className="bg-[#FAF8F5]">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="bg-white border border-[#EBE4DC] px-6 py-5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-4 gap-y-6 items-center justify-items-center">
           {stats.map((s, index) => (
             <motion.div
               key={index}
@@ -150,6 +151,7 @@ return (
               </div>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
     </section>

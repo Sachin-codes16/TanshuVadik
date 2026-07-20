@@ -7,38 +7,42 @@ export const VideoBanner: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-[360px] sm:h-[420px] py-16 sm:py-0 flex items-center justify-center overflow-hidden bg-[#2C2623]">
-        {/* Background image with parallax-like styling and deep dark overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAgdEoJ388LYmLORQcLJNBrO3JtaR3-S-DyJB-hesRiPrvyrIBm3_Cqb38k7mKj2EL0pYUdsloUVvN4WdPpZWo9GZVnRHlX51HXdVSY-ydP7t7UClRXp7DjFvdEPaCWp_CGrPBwJ3xqhwzOkTDpMhJ_LAuHEHZ3-GHXbegT5K1Huu4T_Usb0AHedf-Jhy7xjAIyVHmGlCuWr4IJeOtxKvCjTjIB67dRkDAa-f1T9inhnqi6avKF6UvjAEBV5zzqkY7LLLmgv3-KVQ"
-            alt="Artisan hands weaving on a handloom"
-            className="w-full h-full object-cover opacity-30 select-none pointer-events-none scale-102"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-black/45" />
-        </div>
+      <section className="bg-[#FAF8F5] py-8 sm:py-10">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="relative min-h-[360px] sm:h-[420px] py-16 sm:py-0 flex items-center justify-center overflow-hidden bg-[#2C2623]">
+            {/* Background image with parallax-like styling and deep dark overlay */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAgdEoJ388LYmLORQcLJNBrO3JtaR3-S-DyJB-hesRiPrvyrIBm3_Cqb38k7mKj2EL0pYUdsloUVvN4WdPpZWo9GZVnRHlX51HXdVSY-ydP7t7UClRXp7DjFvdEPaCWp_CGrPBwJ3xqhwzOkTDpMhJ_LAuHEHZ3-GHXbegT5K1Huu4T_Usb0AHedf-Jhy7xjAIyVHmGlCuWr4IJeOtxKvCjTjIB67dRkDAa-f1T9inhnqi6avKF6UvjAEBV5zzqkY7LLLmgv3-KVQ"
+                alt="Artisan hands weaving on a handloom"
+                className="w-full h-full object-cover opacity-30 select-none pointer-events-none scale-102"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-black/45" />
+            </div>
 
-        {/* Floating Play Button & Text Content */}
-        <div className="relative z-10 text-center flex flex-col items-center gap-6 max-w-4xl px-6">
-          <motion.button
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsOpen(true)}
-            className="w-20 h-20 rounded-full bg-white text-[#2C2623] hover:bg-[#8F533C] hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center cursor-pointer group border border-white/20"
-            aria-label="Play our story video"
-          >
-            <Play size={24} className="ml-1.5 transition-transform group-hover:scale-110" fill="currentColor" />
-          </motion.button>
+            {/* Floating Play Button & Text Content */}
+            <div className="relative z-10 text-center flex flex-col items-center gap-6 max-w-4xl px-6">
+              <motion.button
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsOpen(true)}
+                className="w-20 h-20 rounded-full bg-white text-[#2C2623] hover:bg-[#8F533C] hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center cursor-pointer group border border-white/20"
+                aria-label="Play our story video"
+              >
+                <Play size={24} className="ml-1.5 transition-transform group-hover:scale-110" fill="currentColor" />
+              </motion.button>
 
-          <div className="flex flex-col gap-3">
-            <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white tracking-wide font-light leading-snug">
-              Crafted by Skilled Hands. Inspired by Nature. <br className="hidden sm:inline" />
-              <span className="italic font-normal text-[#EBE4DC]">Made for the World.</span>
-            </h3>
-            <p className="font-sans text-xs sm:text-sm text-[#E0D7CD]/90 uppercase tracking-[0.2em] font-medium">
-              Watch our story of craftsmanship, care and commitment.
-            </p>
+              <div className="flex flex-col gap-3">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white tracking-wide font-light leading-snug">
+                  Crafted by Skilled Hands. Inspired by Nature. <br className="hidden sm:inline" />
+                  <span className="italic font-normal text-[#EBE4DC]">Made for the World.</span>
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[#E0D7CD]/90 uppercase tracking-[0.2em] font-medium">
+                  Watch our story of craftsmanship, care and commitment.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

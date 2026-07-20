@@ -199,42 +199,6 @@ export const products: Product[] = [
   },
   // 9. Kitchen Linen
   {
-    id: 'kitchen-apron-striped',
-    name: 'Striped Linen Kitchen Apron',
-    collection: 'home-decor',
-    subcategory: 'Apron',
-    image: img('apron_striped_1783702250471.jpg'),
-    description: 'Classic vertical forest-green and cream striped flax linen apron, complete with a dual front utility pocket and long wrap-around ties.',
-    material: '100% Pure Organic Flax Linen',
-    dimensions: 'One Size Adjustable (75cm x 85cm)',
-    leadTime: '4 weeks',
-    minOrderQuantity: '300 pcs'
-  },
-  {
-    id: 'kitchen-drying-mat',
-    name: 'Quilted Dish Drying Counter Mat',
-    collection: 'home-decor',
-    subcategory: 'Apron',
-    image: img('drying_mat_quilted_1783704103295.jpg'),
-    description: 'Soft, absorbent beige counter mat designed with classic diamond-quilting and heavy bias binding. Extremely fast-drying core prevents microbial build-up.',
-    material: 'Quilted Organic Cotton Face with fast-absorb foam core',
-    dimensions: '40x50 cm, 45x60 cm',
-    leadTime: '4-5 weeks',
-    minOrderQuantity: '400 pcs'
-  },
-  {
-    id: 'kitchen-pot-holders',
-    name: 'Diamond Quilted Pot Holders',
-    collection: 'home-decor',
-    subcategory: 'Apron',
-    image: img('pot_holders_terracotta_1783704070207.jpg'),
-    description: 'Set of two heat-resistant pot holders (one rich terracotta/rust, one sand-beige) featuring custom diamond-quilting and sturdy loops for hanging.',
-    material: '100% Thick Cotton Canvas with Flame-Retardant Padding',
-    dimensions: '20x20 cm',
-    leadTime: '4 weeks',
-    minOrderQuantity: '800 sets'
-  },
-  {
     id: 'kitchen-towel-set-printed',
     name: 'Printed Kitchen Towel Gift Set',
     collection: 'home-decor',

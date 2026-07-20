@@ -5,12 +5,12 @@ export const About: React.FC = () => {
   return (
     <section
       id="heritage"
-      className="pt-14 sm:pt-16 bg-[#FAF8F5] border-t border-[#EBE4DC]"
+      className="pt-8 sm:pt-10 bg-[#FAF8F5] border-t border-[#EBE4DC]"
     >
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start">
 
         {/* LEFT SIDE: Artisan Image */}
-        <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden">
+        <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden px-6 lg:px-0">
           <img
             src={heartBehindImage}
             alt="Master artisan hand-detailing a woven rug"

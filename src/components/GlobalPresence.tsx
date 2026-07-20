@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
+import worldMapImage from '../assets/images/ChatGPT Image Jul 20, 2026, 02_30_02 PM.png';
 
 interface RoutePin {
   label: string;
@@ -7,15 +8,18 @@ interface RoutePin {
   top: string;
   left: string;
   isHub?: boolean;
+  bend?: number;
+  control?: { x: number; y: number };
+  showLabel?: boolean;
 }
 
 const pins: RoutePin[] = [
-  { label: 'USA', top: '28%', left: '10%' },
-  { label: 'EUROPE', top: '14%', left: '40%' },
-  { label: 'MIDDLE EAST', top: '32%', left: '54%' },
-  { label: 'JAPAN', top: '18%', left: '78%' },
-  { label: 'AUSTRALIA', sub: 'Head Office', top: '66%', left: '73%', isHub: true },
-  { label: 'NEW ZEALAND', top: '78%', left: '92%' },
+  { label: 'USA', top: '32%', left: '27%', control: { x: 62, y: 74 } },
+  { label: 'EUROPE', top: '30%', left: '51%' },
+  { label: 'MIDDLE EAST', top: '38%', left: '61%', showLabel: true },
+  { label: 'JAPAN', top: '35%', left: '81%' },
+  { label: 'AUSTRALIA', sub: 'Head Office', top: '60%', left: '78%', isHub: true },
+  { label: 'NEW ZEALAND', top: '71%', left: '84%' },
 ];
 
 const hub = pins.find((p) => p.isHub)!;
@@ -23,8 +27,8 @@ const routes = pins.filter((p) => !p.isHub);
 
 export const GlobalPresence: React.FC = () => {
   return (
-    <section id="presence" className="pt-3 pb-10 bg-[#FAF8F5]">
-      <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="presence" className="pt-8 pb-0 bg-[#FAF8F5]">
+      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         {/* LEFT: Heading & CTA */}
         <div className="lg:col-span-5 flex flex-col items-start gap-4">
@@ -47,17 +51,12 @@ export const GlobalPresence: React.FC = () => {
         </div>
 
         {/* RIGHT: Route Map */}
-        <div className="lg:col-span-7 relative w-full aspect-[16/9] select-none overflow-hidden bg-[#FAF8F5]">
+        <div className="lg:col-span-7 relative w-full aspect-[3/2] select-none overflow-hidden bg-[#FAF8F5]">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKoBaZ0rlNuVgvn47qrRsUDQbdiBYpjU-81mJ_vel0IDu420_Ch2NDLggsvqUgXzBkfiTkhHB0Tj82HiqlpVXvQ0mKc6n4nuHOgHFodeDf4nJZyQDAP0p3S0tD2OIXoTdeIETmeJ64XHo54RsL7Uuo7ysZp7xh-KXmVKAFWMxdZEb6x-nA4vPRReQTpWg0ruQz09s5_DFhgLWR3NQ87YU8MLP9Zhxg9SCXS6TiEdf1unyi-g8NH1KhJQv14ixzON7lUVtlazRBJ4A"
+            src={worldMapImage}
             alt="World trade route map"
-            className="absolute left-0 w-full object-cover opacity-25"
+            className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            style={{
-              filter: 'grayscale(1) brightness(0.8)',
-              top: '-22%',
-              height: '140%',
-            }}
           />
 
           {/* Route Lines */}
@@ -71,17 +70,17 @@ export const GlobalPresence: React.FC = () => {
               const y1 = parseFloat(hub.top);
               const x2 = parseFloat(p.left);
               const y2 = parseFloat(p.top);
-              const cx = (x1 + x2) / 2;
-              const cy = Math.min(y1, y2) - 12;
+              const cx = p.control?.x ?? (x1 + x2) / 2;
+              const cy = p.control?.y ?? Math.min(y1, y2) - (p.bend ?? 12);
               return (
                 <path
                   key={p.label}
                   d={`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`}
                   fill="none"
                   stroke="#000000"
-                  strokeWidth="0.5"
+                  strokeWidth="0.6"
                   strokeDasharray="1.5 1.5"
-                  opacity="0.85"
+                  opacity="1"
                   vectorEffect="non-scaling-stroke"
                 />
               );
@@ -93,12 +92,24 @@ export const GlobalPresence: React.FC = () => {
             <div
               key={pin.label}
               style={{ top: pin.top, left: pin.left }}
-              className="absolute -translate-x-1/2 -translate-y-full flex flex-col items-center gap-0.5"
+              className="absolute -translate-x-1/2 -translate-y-full"
             >
               <MapPin size={26} className="text-[#8F533C]" fill="#8F533C" strokeWidth={1} />
-              <span className="font-sans text-[10px] font-bold text-[#2C2623] uppercase tracking-wide whitespace-nowrap mt-0.5">
-                {pin.label}
-              </span>
+            </div>
+          ))}
+
+          {/* Pin name/sub-labels (kept out of the pin's own translate so it doesn't shift the route anchor) */}
+          {pins.map((pin) => (pin.sub || pin.showLabel) && (
+            <div
+              key={`${pin.label}-sub`}
+              style={{ top: pin.top, left: pin.left }}
+              className="absolute -translate-x-1/2 mt-1 flex flex-col items-center gap-0.5"
+            >
+              {pin.showLabel && (
+                <span className="font-sans text-[10px] font-bold text-[#2C2623] uppercase tracking-wide whitespace-nowrap">
+                  {pin.label}
+                </span>
+              )}
               {pin.sub && (
                 <span className="font-sans text-[9px] text-[#615751] whitespace-nowrap">
                   {pin.sub}

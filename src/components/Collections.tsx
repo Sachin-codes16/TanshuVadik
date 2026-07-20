@@ -6,7 +6,6 @@ import { TrustStats } from './TrustStats';
 import { Certifications } from './Certifications';
 import springCollection from "../assets/images/Spring.png"
 import fallCollection from "../assets/images/Fall.png"
-import rugsImage from "../assets/images/Rug.jpeg"
 
 const localImages = import.meta.glob('../assets/images/*', { eager: true, import: 'default' }) as Record<string, string>;
 const img = (filename: string): string => {
@@ -51,7 +50,7 @@ export const Collections: React.FC = () => {
   const homeDecorCategories: CategoryCard[] = useMemo(() => [
     {
       name: 'Rugs',
-      image: rugsImage,
+      image: img('WhatsApp Image 2026-07-20 at 11.45.28.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Rugs').length
     },
     {
@@ -92,7 +91,7 @@ export const Collections: React.FC = () => {
     },
     {
       name: 'Kitchen Linen',
-      image: img('WhatsApp Image 2026-07-17 at 17.34.06.jpeg'),
+      image: img('WhatsApp Image 2026-07-17 at 15.40.18.jpeg'),
       itemCount: products.filter(p => p.subcategory === 'Apron').length
     },
     {
@@ -323,7 +322,7 @@ export const Collections: React.FC = () => {
         </div>
 
         {/* Seasonal & Holiday images, fixed directly below Pet Living (heading removed) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 mb-6">
           {seasonalCategories.map((category) => (
             <div
               key={category.name}
