@@ -68,18 +68,6 @@ export const GlobalPresence: React.FC = () => {
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
           >
-            <defs>
-              <marker
-                id="routeArrow"
-                markerWidth="6"
-                markerHeight="6"
-                refX="3"
-                refY="3"
-                orient="auto-start-reverse"
-              >
-                <path d="M0,0 L6,3 L0,6 Z" fill="#000000" />
-              </marker>
-            </defs>
             {routes.map((p) => {
               // Anchor at the top of each pin's head (not its tip) so the line never crosses the label below it
               const x1 = parseFloat(p.left);
@@ -98,7 +86,6 @@ export const GlobalPresence: React.FC = () => {
                   strokeDasharray="1.5 1.5"
                   opacity="1"
                   vectorEffect="non-scaling-stroke"
-                  markerEnd="url(#routeArrow)"
                 />
               );
             })}

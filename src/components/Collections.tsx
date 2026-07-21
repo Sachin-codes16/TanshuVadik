@@ -430,11 +430,11 @@ export const Collections: React.FC = () => {
                           className="bg-white border border-[#EBE4DC] hover:border-[#8F533C]/40 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 shadow-xs transition-all"
                         >
                           {/* Image */}
-                          <div className="w-full sm:w-1/3 aspect-square bg-[#F4EFEA] overflow-hidden border border-[#EBE4DC] relative group">
+                          <div className="w-full sm:w-2/5 bg-[#F4EFEA] overflow-hidden border border-[#EBE4DC] relative group self-start">
                             <img
                               src={product.image}
                               alt={product.name}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                               referrerPolicy="no-referrer"
                             />
                           </div>
@@ -548,7 +548,7 @@ export const Collections: React.FC = () => {
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 left-4 bg-[#2C2623]/95 text-white py-1 px-3 text-[10px] font-bold tracking-widest uppercase">

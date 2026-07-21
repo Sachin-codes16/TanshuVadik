@@ -84,6 +84,7 @@ import icon3 from "../assets/images/ico-c.svg";
 import icon4 from "../assets/images/ico-d.svg";
 import icon5 from "../assets/images/ico-e.svg";
 import icon6 from "../assets/images/ico-f.svg";
+import icon7 from "../assets/images/Global si[[ing.png";
 
 export const TrustStats: React.FC = () => {
   const stats = [
@@ -118,7 +119,7 @@ export const TrustStats: React.FC = () => {
       label: 'Assurance At\nEvery Step',
     },
     {
-      icon:< img src={icon1} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon:< img src={icon7} className=" w-full h-full object-cover scale-150 mix-blend-multiply" />,
       value: 'Global Shipping',
       label: 'Worldwide\nDelivery',
     },
