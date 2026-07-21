@@ -10,7 +10,7 @@ export const About: React.FC = () => {
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start">
 
         {/* LEFT SIDE: Artisan Image */}
-        <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden px-6 lg:px-0">
+        <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden px-6 lg:pl-6 lg:pr-0">
           <img
             src={heartBehindImage}
             alt="Master artisan hand-detailing a woven rug"

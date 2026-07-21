@@ -135,13 +135,13 @@ return (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.04 }}
-              className="flex flex-row items-center gap-3 text-left w-full max-w-[160px]"
+              className="flex flex-row items-center justify-center gap-3 text-left w-full"
             >
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#EBE4DC] flex items-center justify-center">
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#EBE4DC] border border-[#8F533C]/30 shadow-[0_4px_14px_rgba(143,83,60,0.6)] flex items-center justify-center p-2.5">
                 {s.icon}
               </div>
 
-              <div className="flex flex-col justify-center min-w-0">
+              <div className="flex flex-col justify-center min-w-0 -mt-1">
                 <div className="font-sans text-sm sm:text-base font-bold text-[#2C2623] tracking-tight leading-tight">
                   {s.value}
                 </div>

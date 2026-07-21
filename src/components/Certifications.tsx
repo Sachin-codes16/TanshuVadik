@@ -90,7 +90,7 @@ export const Certifications: React.FC = () => {
         //   <text x="50" y="78" textAnchor="middle" fill="#8F533C" fontSize="14" fontWeight="bold" fontFamily="sans-serif">GMO</text>
         // </svg>
 
-        <img src={nongmo} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain" />
+        <img src={nongmo} alt="ISO 9001:2015 logo" className="w-16 h-16 object-contain opacity-50" />
       ),
       description: 'Project Verified',
     },
@@ -132,7 +132,7 @@ export const Certifications: React.FC = () => {
 
           {/* Right Column - Certifications Grid */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center items-start">
               {certs.map((c, index) => (
                 <motion.div
                   key={c.id}
@@ -140,19 +140,19 @@ export const Certifications: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex flex-col items-center text-center gap-3 p-5 w-full max-w-[140px] transition-all duration-300"
+                  className="flex flex-col items-center text-center gap-3 p-5 w-full max-w-40 transition-all duration-300"
                 >
                   {/* Circle SVG */}
                   <div className="w-16 h-16 flex items-center justify-center">
                     {c.logo}
                   </div>
-                  
+
                   {/* Labels */}
-                  <div className="flex flex-col gap-0.5 mt-1">
-                    <span className="font-sans text-[10px] font-bold text-[#2C2623] uppercase tracking-wider leading-tight">
+                  <div className="flex flex-col items-center gap-0.5 mt-1 w-full">
+                    <span className="font-sans text-[10px] font-bold text-[#2C2623] uppercase tracking-wider leading-tight min-h-6 flex items-center justify-center text-center">
                       {c.name.split(' ')[0]} {c.name.split(' ')[1] || ''}
                     </span>
-                    <span className="font-sans text-[9px] text-[#615751] font-light tracking-wide">
+                    <span className="font-sans text-[9px] text-[#615751] font-light tracking-wide whitespace-normal sm:whitespace-nowrap">
                       {c.description}
                     </span>
                   </div>

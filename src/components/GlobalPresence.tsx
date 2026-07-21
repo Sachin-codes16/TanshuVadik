@@ -14,16 +14,19 @@ interface RoutePin {
 }
 
 const pins: RoutePin[] = [
-  { label: 'USA', top: '32%', left: '27%', control: { x: 62, y: 74 } },
-  { label: 'EUROPE', top: '30%', left: '51%' },
-  { label: 'MIDDLE EAST', top: '38%', left: '61%', showLabel: true },
-  { label: 'JAPAN', top: '35%', left: '81%' },
+  { label: 'USA', top: '32%', left: '27%', bend: 30 },
+  { label: 'EUROPE', top: '30%', left: '51%', bend: 20 },
+  { label: 'MIDDLE EAST', top: '38%', left: '61%', showLabel: true, bend: 16 },
+  { label: 'JAPAN', top: '35%', left: '81%', bend: 16 },
   { label: 'AUSTRALIA', sub: 'Head Office', top: '60%', left: '78%', isHub: true },
-  { label: 'NEW ZEALAND', top: '71%', left: '84%' },
+  { label: 'NEW ZEALAND', top: '71%', left: '84%', bend: 16 },
 ];
 
 const hub = pins.find((p) => p.isHub)!;
 const routes = pins.filter((p) => !p.isHub);
+
+// Anchor route lines at the top of each pin's head (not its tip) so a line never crosses the label sitting below it
+const ICON_TOP_OFFSET = 5;
 
 export const GlobalPresence: React.FC = () => {
   return (
@@ -65,23 +68,37 @@ export const GlobalPresence: React.FC = () => {
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
           >
+            <defs>
+              <marker
+                id="routeArrow"
+                markerWidth="6"
+                markerHeight="6"
+                refX="3"
+                refY="3"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L6,3 L0,6 Z" fill="#000000" />
+              </marker>
+            </defs>
             {routes.map((p) => {
-              const x1 = parseFloat(hub.left);
-              const y1 = parseFloat(hub.top);
-              const x2 = parseFloat(p.left);
-              const y2 = parseFloat(p.top);
+              // Anchor at the top of each pin's head (not its tip) so the line never crosses the label below it
+              const x1 = parseFloat(p.left);
+              const y1 = parseFloat(p.top) - ICON_TOP_OFFSET;
+              const x2 = parseFloat(hub.left);
+              const y2 = parseFloat(hub.top) - ICON_TOP_OFFSET;
               const cx = p.control?.x ?? (x1 + x2) / 2;
-              const cy = p.control?.y ?? Math.min(y1, y2) - (p.bend ?? 12);
+              const cy = p.control?.y ?? Math.min(y1, y2) - (p.bend ?? 14);
               return (
                 <path
                   key={p.label}
                   d={`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`}
                   fill="none"
                   stroke="#000000"
-                  strokeWidth="0.6"
+                  strokeWidth="1"
                   strokeDasharray="1.5 1.5"
                   opacity="1"
                   vectorEffect="non-scaling-stroke"
+                  markerEnd="url(#routeArrow)"
                 />
               );
             })}

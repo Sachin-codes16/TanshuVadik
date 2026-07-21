@@ -106,7 +106,7 @@ export const Collections: React.FC = () => {
     },
     {
       name: 'Home Accessories',
-      image: img('SeasonalCollections.jpeg'),
+      image: img('ChatGPT Image Jul 21, 2026, 11_56_04 AM.png'),
       itemCount: products.filter(p => p.subcategory === 'Table Placemat').length
     }
   ], []);
@@ -226,7 +226,7 @@ export const Collections: React.FC = () => {
         </div>
 
         {/* 1. HOME DECOR SECTION */}
-        <div className="mb-24">
+        <div className="mb-10 sm:mb-12">
           <div className="flex flex-col items-start mb-6 border-b border-[#EBE4DC] pb-4">
             <h3 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-wide">
               HOME DÉCOR COLLECTION
@@ -274,7 +274,7 @@ export const Collections: React.FC = () => {
         </div>
 
         {/* 2. PET LIVING SECTION */}
-        <div className="mb-4">
+        <div className="mb-6 sm:mb-8">
           <div className="flex flex-col items-start mb-6 border-b border-[#EBE4DC] pb-4">
             <h3 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-wide">
               PET LIVING COLLECTION
@@ -285,7 +285,7 @@ export const Collections: React.FC = () => {
           </div>
 
           {/* 4 Grid Layout precisely matched */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 sm:gap-x-10 sm:gap-y-20">
             {petLivingCategories.map((cat, index) => (
               <motion.div
                 key={cat.name}
@@ -312,9 +312,6 @@ export const Collections: React.FC = () => {
                   <span className="font-sans text-[13px] font-bold tracking-[0.12em] text-[#2C2623] uppercase group-hover:text-[#8F533C] transition-colors">
                     {cat.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#8F533C]/80 font-semibold bg-[#8F533C]/5 px-2 py-0.5 border border-[#8F533C]/10">
-                    {cat.itemCount > 0 ? `${cat.itemCount} Items` : 'Catalog'}
-                  </span>
                 </div>
               </motion.div>
             ))}
@@ -322,7 +319,7 @@ export const Collections: React.FC = () => {
         </div>
 
         {/* Seasonal & Holiday images, fixed directly below Pet Living (heading removed) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
           {seasonalCategories.map((category) => (
             <div
               key={category.name}
