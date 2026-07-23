@@ -1,22 +1,21 @@
 import React from 'react';
 import { MapPin } from 'lucide-react';
-import worldMapImage from '../assets/images/ChatGPT Image Jul 20, 2026, 02_30_02 PM.png';
+import worldMapImage from '../assets/images/WhatsApp Image 2026-07-23 at 12.24.23.jpeg';
 
 interface RoutePin {
   label: string;
   sub?: string;
   top: string;
   left: string;
-  showLabel?: boolean;
 }
 
 const pins: RoutePin[] = [
-  { label: 'USA', top: '32%', left: '27%' },
-  { label: 'EUROPE', top: '30%', left: '51%' },
-  { label: 'MIDDLE EAST', top: '38%', left: '61%', showLabel: true },
-  { label: 'JAPAN', top: '35%', left: '81%' },
-  { label: 'AUSTRALIA', sub: 'Head Office', top: '60%', left: '78%' },
-  { label: 'NEW ZEALAND', top: '71%', left: '84%' },
+  { label: 'USA', top: '32%', left: '23%' },
+  { label: 'EUROPE', top: '29%', left: '52%' },
+  { label: 'MIDDLE EAST', top: '38%', left: '62%' },
+  { label: 'JAPAN', top: '34%', left: '80%' },
+  { label: 'AUSTRALIA', sub: 'Head Office', top: '64%', left: '83%' },
+  { label: 'NEW ZEALAND', top: '79%', left: '91%' },
 ];
 
 export const GlobalPresence: React.FC = () => {
@@ -45,46 +44,28 @@ export const GlobalPresence: React.FC = () => {
         </div>
 
         {/* RIGHT: Route Map */}
-        <div className="lg:col-span-8 relative w-full aspect-[3/2] select-none overflow-hidden bg-[#FAF8F5]">
-          {/* Zoom wrapper: scales the map image and its pins together so the
-              baked-in empty margin of the source artwork shrinks while every
-              landmass and pin stays fully in view (no cropping). */}
-          <div
-            className="absolute inset-0"
-            style={{ transform: 'scale(1.3) translateY(10%)', transformOrigin: 'center' }}
-          >
+        <div className="lg:col-span-8 relative w-full aspect-[1600/1131] select-none overflow-hidden bg-[#FAF8F5]">
+          <div className="absolute inset-0">
             <img
               src={worldMapImage}
               alt="World trade route map"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain"
               referrerPolicy="no-referrer"
             />
 
-            {/* Pins */}
+            {/* Each marker is centered directly above its country label. */}
             {pins.map((pin) => (
               <div
                 key={pin.label}
                 style={{ top: pin.top, left: pin.left }}
-                className="absolute -translate-x-1/2 -translate-y-full"
+                className="absolute -translate-x-1/2 flex flex-col items-center"
               >
-                <MapPin size={26} className="text-[#8F533C]" fill="#8F533C" strokeWidth={1} />
-              </div>
-            ))}
-
-            {/* Pin name/sub-labels (kept out of the pin's own translate so it doesn't shift the route anchor) */}
-            {pins.map((pin) => (pin.sub || pin.showLabel) && (
-              <div
-                key={`${pin.label}-sub`}
-                style={{ top: pin.top, left: pin.left }}
-                className="absolute -translate-x-1/2 mt-1 flex flex-col items-center gap-0.5"
-              >
-                {pin.showLabel && (
-                  <span className="font-sans text-[10px] font-bold text-[#2C2623] uppercase tracking-wide whitespace-nowrap">
-                    {pin.label}
-                  </span>
-                )}
+                <MapPin size={29} className="text-[#955039]" fill="#955039" strokeWidth={1} />
+                <span className="mt-1 font-sans text-[11px] font-light text-[#2C2623] uppercase tracking-wide whitespace-nowrap">
+                  {pin.label}
+                </span>
                 {pin.sub && (
-                  <span className="font-sans text-[9px] text-[#615751] whitespace-nowrap">
+                  <span className="font-sans text-[8px] text-[#615751] leading-none whitespace-nowrap">
                     {pin.sub}
                   </span>
                 )}

@@ -84,7 +84,7 @@ import icon3 from "../assets/images/ico-c.svg";
 import icon4 from "../assets/images/ico-d.svg";
 import icon5 from "../assets/images/ico-e.svg";
 import icon6 from "../assets/images/ico-f.svg";
-import icon7 from "../assets/images/Global si[[ing.png";
+import icon7 from "../assets/images/global shipping logo 2 png.png";
 
 export const TrustStats: React.FC = () => {
   const stats = [
@@ -120,15 +120,9 @@ export const TrustStats: React.FC = () => {
     },
     {
       icon: (
-        <div
-          className="w-full h-full mix-blend-multiply"
-          style={{
-            backgroundImage: `url(${icon7})`,
-            backgroundSize: '113.24px 37.77px',
-            backgroundPosition: '-37.98px -1.15px',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+        <div className="w-full h-full rounded-full bg-[#D7C5AF] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon7} alt="Global shipping" className="w-full h-full object-contain scale-[1.6] mix-blend-multiply" />
+        </div>
       ),
       value: 'Global Shipping',
       label: 'Worldwide\nDelivery',
@@ -148,7 +142,7 @@ return (
               transition={{ duration: 0.3, delay: index * 0.04 }}
               className="flex flex-row items-center justify-center gap-3 text-left w-full"
             >
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#EBE4DC] border border-[#8F533C]/30 shadow-[0_4px_14px_rgba(143,83,60,0.6)] flex items-center justify-center p-2.5">
+              <div className="flex-shrink-0 w-14 h-14 overflow-hidden rounded-full bg-[#EBE4DC] border border-[#8F533C]/30 shadow-[0_4px_14px_rgba(143,83,60,0.6)] flex items-center justify-center p-2.5">
                 {s.icon}
               </div>
 

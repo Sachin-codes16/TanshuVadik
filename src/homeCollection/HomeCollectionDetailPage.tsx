@@ -3,10 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   ArrowLeft,
   ArrowRight,
-  Component,
-  Diamond,
-  Square,
-  Layers,
   ShoppingBasket,
   Sprout,
   Waves,
@@ -20,24 +16,30 @@ import { ProductShowcaseModal } from '../components/ProductShowcaseModal';
 import { homeCategories, getProductsForHomeCategory } from './HomeCollectionClick';
 import { RugsDetailsPage } from './RugsDetailsPage';
 import heroImage from '../assets/collection/homecollection1.png';
+import rugsIcon from '../assets/Icons/Rugs.png';
+import carpetIcon from '../assets/Icons/Carpet.png';
+import cushionsIcon from '../assets/Icons/Cushions.png';
+import throwsIcon from '../assets/Icons/Throws.png';
 
 interface HomeCollectionDetailPageProps {
   onBack: () => void;
 }
 
+const ICON_COLOR = '#8F533C';
+
 const categoryIcons: Record<string, React.ReactNode> = {
-  Rugs: <Component size={18} />,
-  Carpets: <Diamond size={18} />,
-  Cushions: <Square size={18} />,
-  Throws: <Layers size={18} />,
-  Basket: <ShoppingBasket size={18} />,
-  Planters: <Sprout size={18} />,
-  'Bath Mats': <Waves size={18} />,
-  'Table Linen': <UtensilsCrossed size={18} />,
-  'Kitchen Linen': <ChefHat size={18} />,
-  'Tote Bags': <ShoppingBag size={18} />,
-  'Wall Décor': <Frame size={18} />,
-  'Home Accessories': <Sparkles size={18} />,
+  Rugs: <img src={rugsIcon} alt="" className="w-full h-full object-cover rounded-full" />,
+  Carpets: <img src={carpetIcon} alt="" className="w-full h-full object-contain p-2" />,
+  Cushions: <img src={cushionsIcon} alt="" className="w-full h-full object-contain p-2" />,
+  Throws: <img src={throwsIcon} alt="" className="w-full h-full object-contain p-2" />,
+  Basket: <ShoppingBasket size={18} color={ICON_COLOR} />,
+  Planters: <Sprout size={18} color={ICON_COLOR} />,
+  'Bath Mats': <Waves size={18} color={ICON_COLOR} />,
+  'Table Linen': <UtensilsCrossed size={18} color={ICON_COLOR} />,
+  'Kitchen Linen': <ChefHat size={18} color={ICON_COLOR} />,
+  'Tote Bags': <ShoppingBag size={18} color={ICON_COLOR} />,
+  'Wall Décor': <Frame size={18} color={ICON_COLOR} />,
+  'Home Accessories': <Sparkles size={18} color={ICON_COLOR} />,
 };
 
 export const HomeCollectionDetailPage: React.FC<HomeCollectionDetailPageProps> = ({ onBack }) => {

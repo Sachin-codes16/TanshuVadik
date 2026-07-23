@@ -1,12 +1,15 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, PawPrint, Gift, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { products } from '../data';
 import { Product } from '../types';
 import { ProductShowcaseModal } from '../components/ProductShowcaseModal';
 import homeCollectionImage from '../assets/collection/HomeCollection.png';
 import petUtilityImage from '../assets/collection/Petutility.png';
 import seasonalCollectionImage from '../assets/collection/SesonalCollection.png';
+import homeIcon from '../assets/Icons/HomeCollection.png';
+import petIcon from '../assets/Icons/Petutility.png';
+import seasonalIcon from '../assets/Icons/Sesonal.png';
 
 interface CardConfig {
   key: Product['collection'];
@@ -22,21 +25,21 @@ const cards: CardConfig[] = [
     title: 'Home Collection',
     description: 'Elevate your living spaces with timeless handcrafted home décor.',
     image: homeCollectionImage,
-    icon: <Home size={20} />,
+    icon: <img src={homeIcon} alt="" className="w-7 h-7 object-contain" />,
   },
   {
     key: 'pet-living',
     title: 'Pet Utility',
     description: 'Premium pet essentials that blend comfort, quality and style.',
     image: petUtilityImage,
-    icon: <PawPrint size={20} />,
+    icon: <img src={petIcon} alt="" className="w-7 h-7 object-contain" />,
   },
   {
     key: 'seasonal',
     title: 'Seasonal Collection',
     description: 'Curated collections inspired by every season and celebration.',
     image: seasonalCollectionImage,
-    icon: <Gift size={20} />,
+    icon: <img src={seasonalIcon} alt="" className="w-7 h-7 object-contain" />,
   },
 ];
 
@@ -57,11 +60,9 @@ export const CollectionCardsSection: React.FC<CollectionCardsSectionProps> = ({
   );
 
   const handleCardClick = (card: CardConfig) => {
-    // Home Collection / Rugs detail pages disabled for now — revisit later.
-    // if (card.key === 'home-decor') {
-    //   onOpenHomeCollection();
-    // } else
-    if (card.key === 'seasonal') {
+    if (card.key === 'home-decor') {
+      onOpenHomeCollection();
+    } else if (card.key === 'seasonal') {
       onOpenSeasonalCollection();
     } else {
       setActiveCollection(card);
@@ -92,7 +93,7 @@ export const CollectionCardsSection: React.FC<CollectionCardsSectionProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               onClick={() => handleCardClick(card)}
-              className="group cursor-pointer relative overflow-hidden rounded-xl border border-[#EBE4DC] hover:border-[#16294B]/30 hover:shadow-lg transition-all duration-300 aspect-[4/3]"
+              className="group cursor-pointer relative overflow-hidden rounded-xl border border-[#EBE4DC] hover:border-[#16294B]/30 hover:shadow-lg transition-all duration-300 aspect-[16/9]"
             >
               {/* Background image with gradient overlay, same treatment as the hero */}
               <img
@@ -101,17 +102,15 @@ export const CollectionCardsSection: React.FC<CollectionCardsSectionProps> = ({
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-y-0 left-0 w-[58%] bg-gradient-to-r from-[#FAF8F5] from-70% to-transparent" />
-
-              {/* Icon + text overlaid on top of the gradient */}
+              {/* Icon + text overlaid on top of the image */}
               <div className="relative h-full flex flex-col justify-between p-6">
-                <div className="w-11 h-11 rounded-full bg-white shadow-sm border border-[#EBE4DC] flex items-center justify-center text-[#16294B]">
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-[#EBE4DC] flex items-center justify-center text-[#16294B]">
                   {card.icon}
                 </div>
 
                 <div className="flex flex-col gap-2 max-w-[75%]">
-                  <h3 className="font-serif text-xl text-[#2C2623] font-medium">{card.title}</h3>
-                  <p className="font-sans text-sm text-[#615751] leading-relaxed">
+                  <h3 className="font-serif text-xl text-black font-bold">{card.title}</h3>
+                  <p className="font-sans text-sm text-black/80 leading-relaxed font-semibold">
                     {card.description}
                   </p>
                   <span className="mt-1 inline-flex items-center gap-1.5 font-sans text-xs font-bold tracking-widest uppercase text-[#16294B] group-hover:gap-2.5 transition-all">
