@@ -119,7 +119,17 @@ export const TrustStats: React.FC = () => {
       label: 'Assurance At\nEvery Step',
     },
     {
-      icon:< img src={icon7} className=" w-full h-full object-cover scale-150 mix-blend-multiply" />,
+      icon: (
+        <div
+          className="w-full h-full mix-blend-multiply"
+          style={{
+            backgroundImage: `url(${icon7})`,
+            backgroundSize: '113.24px 37.77px',
+            backgroundPosition: '-37.98px -1.15px',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      ),
       value: 'Global Shipping',
       label: 'Worldwide\nDelivery',
     },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InquiryProvider } from './context/InquiryContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -9,42 +9,59 @@ import { About } from './components/About';
 import { GlobalPresence } from './components/GlobalPresence';
 import { Footer } from './components/Footer';
 import { motion } from 'motion/react';
+import { HomeCollectionPage } from './homeCollection/HomeCollectionPage';
 
 export default function App() {
+  const [showCollectionsPage, setShowCollectionsPage] = useState(false);
+
+  const handleNavigateCollections = () => {
+    setShowCollectionsPage(true);
+    window.scrollTo({ top: 0 });
+  };
+
+  const handleBackToHome = () => {
+    setShowCollectionsPage(false);
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <InquiryProvider>
       <div id="app-root" className="min-h-screen bg-[#FAF8F5] text-[#2C2623] font-sans overflow-x-hidden selection:bg-[#8F533C] selection:text-white">
-        
+
         {/* Navigation bar with floating RFQ badge */}
-        <Navbar />
+        <Navbar onNavigateCollections={handleNavigateCollections} onNavigateHome={handleBackToHome} />
 
-        {/* Master visual sections */}
-        <motion.main
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Editorial Loom Banner Section */}
-          <Hero />
+        {showCollectionsPage ? (
+          <HomeCollectionPage />
+        ) : (
+          /* Master visual sections */
+          <motion.main
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Editorial Loom Banner Section */}
+            <Hero />
 
-          {/* Why Global Buyers Choose TanshU */}
-          <WhyChooseUs />
+            {/* Why Global Buyers Choose TanshU */}
+            <WhyChooseUs />
 
-          {/* Interactive Catalog and Bespoke Thread Visualizer */}
-          <Collections />
+            {/* Interactive Catalog and Bespoke Thread Visualizer */}
+            <Collections />
 
-          {/* High Fidelity Video / Story Banner */}
-          <VideoBanner />
+            {/* High Fidelity Video / Story Banner */}
+            <VideoBanner />
 
-          {/* Core Handloom & Weaver Narrative (The Heart Behind Every Piece) */}
-          <About />
+            {/* Core Handloom & Weaver Narrative (The Heart Behind Every Piece) */}
+            <About />
 
-          {/* Interactive World Map Trade Logistics Pins */}
-          <GlobalPresence />
-        </motion.main>
+            {/* Interactive World Map Trade Logistics Pins */}
+            <GlobalPresence />
+          </motion.main>
+        )}
 
         {/* Editorial Footnotes and Contacts */}
-        <Footer />
+        {!showCollectionsPage && <Footer />}
 
       </div>
     </InquiryProvider>
