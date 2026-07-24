@@ -18,7 +18,7 @@ export const HeroBanner: React.FC<{ onExploreCollections: () => void }> = ({ onE
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 py-16 sm:py-20 w-full">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-3 py-16 sm:py-20 w-full">
         <div className="flex flex-col gap-5 max-w-lg">
           <span className="font-sans text-[11px] font-bold tracking-[0.2em] text-[#D99A78] uppercase">
             Handcrafted with Care

@@ -35,12 +35,14 @@ const items = [
 
 export const TrustStrip: React.FC = () => {
   return (
-    <section className="bg-[#FAF8F5] border-t border-[#EBE4DC] pt-8 pb-10">
+    <section className="bg-[#FAF8F5] pt-4 pb-10">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {items.map((item) => (
             <div key={item.title} className="flex items-start gap-3">
-              <img src={item.icon} alt="" className="shrink-0 mt-0.5 w-7 h-7 object-contain" />
+              <span className="shrink-0 w-10 h-10 rounded-full border border-[#8F533C]/40 flex items-center justify-center p-2">
+                <img src={item.icon} alt="" className="w-full h-full object-contain" />
+              </span>
               <div className="flex flex-col gap-0.5">
                 <h3 className="font-sans text-xs font-bold text-[#2C2623]">{item.title}</h3>
                 <p className="font-sans text-[11px] text-[#615751] leading-snug">

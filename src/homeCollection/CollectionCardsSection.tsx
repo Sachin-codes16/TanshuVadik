@@ -15,6 +15,7 @@ interface CardConfig {
   key: Product['collection'];
   title: string;
   description: string;
+  cta: string;
   image: string;
   icon: React.ReactNode;
 }
@@ -23,21 +24,24 @@ const cards: CardConfig[] = [
   {
     key: 'home-decor',
     title: 'Home Collection',
-    description: 'Elevate your living spaces with timeless handcrafted home décor.',
+    description: 'Beautiful handcrafted home décor designed for comfort, style, and everyday living.',
+    cta: 'Explore Home Collection',
     image: homeCollectionImage,
     icon: <img src={homeIcon} alt="" className="w-7 h-7 object-contain" />,
   },
   {
     key: 'pet-living',
     title: 'Pet Utility',
-    description: 'Premium pet essentials that blend comfort, quality and style.',
+    description: 'Premium handmade pet essentials combining comfort, durability and elegant design.',
+    cta: 'Explore Pet Utility',
     image: petUtilityImage,
     icon: <img src={petIcon} alt="" className="w-7 h-7 object-contain" />,
   },
   {
     key: 'seasonal',
     title: 'Seasonal Collection',
-    description: 'Curated collections inspired by every season and celebration.',
+    description: 'Fresh collections inspired by every season and celebration around the world.',
+    cta: 'Explore Seasonal Collection',
     image: seasonalCollectionImage,
     icon: <img src={seasonalIcon} alt="" className="w-7 h-7 object-contain" />,
   },
@@ -70,19 +74,8 @@ export const CollectionCardsSection: React.FC<CollectionCardsSectionProps> = ({
   };
 
   return (
-    <section className="bg-[#FAF8F5] pb-10">
-      <div className="max-w-[1280px] mx-auto px-6">
-        {/* Heading */}
-        <div className="flex flex-col items-center text-center gap-3 mb-7">
-          <span className="font-sans text-[11px] font-bold tracking-[0.2em] text-[#8F533C] uppercase">
-            Explore Our Collections
-          </span>
-          <h2 className="font-serif text-2xl sm:text-3xl text-[#2C2623] font-medium tracking-tight">
-            Designed for Your Home. Loved by Your Pets.
-          </h2>
-          <div className="h-[2px] w-14 bg-[#8F533C]" />
-        </div>
-
+    <section className="bg-[#FAF8F5] pb-2">
+      <div className="max-w-[1280px] mx-auto px-3 pt-8">
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => (
@@ -93,31 +86,35 @@ export const CollectionCardsSection: React.FC<CollectionCardsSectionProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               onClick={() => handleCardClick(card)}
-              className="group cursor-pointer relative overflow-hidden rounded-xl border border-[#EBE4DC] hover:border-[#16294B]/30 hover:shadow-lg transition-all duration-300 aspect-[16/9]"
+              className="group cursor-pointer flex flex-col bg-[#FAF8F5] border border-[#EBE4DC] shadow-xs hover:border-[#16294B]/30 hover:shadow-md rounded-xl overflow-hidden transition-all duration-300"
             >
-              {/* Background image with gradient overlay, same treatment as the hero */}
-              <img
-                src={card.image}
-                alt={card.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-              {/* Icon + text overlaid on top of the image */}
-              <div className="relative h-full flex flex-col justify-between p-6">
-                <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-[#EBE4DC] flex items-center justify-center text-[#16294B]">
+              {/* Image */}
+              <div className="relative aspect-[16/8] overflow-hidden bg-[#F4EFEA]">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Icon badge straddling the image / body seam */}
+              <div className="relative flex justify-center">
+                <div className="absolute -top-6 w-12 h-12 rounded-full bg-white shadow-sm border border-[#EBE4DC] flex items-center justify-center text-[#16294B]">
                   {card.icon}
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-2 max-w-[75%]">
-                  <h3 className="font-serif text-xl text-black font-bold">{card.title}</h3>
-                  <p className="font-sans text-sm text-black/80 leading-relaxed font-semibold">
-                    {card.description}
-                  </p>
-                  <span className="mt-1 inline-flex items-center gap-1.5 font-sans text-xs font-bold tracking-widest uppercase text-[#16294B] group-hover:gap-2.5 transition-all">
-                    Discover More
-                    <ArrowRight size={13} />
-                  </span>
-                </div>
+              {/* Text */}
+              <div className="flex flex-col items-center text-center gap-2 px-6 pt-8 pb-6">
+                <h3 className="font-serif text-lg text-black font-semibold">{card.title}</h3>
+                <p className="font-sans text-xs text-black leading-relaxed font-normal">
+                  {card.description}
+                </p>
+                <span className="mt-1 inline-flex items-center gap-1.5 font-sans text-xs font-bold tracking-widest uppercase text-[#A76043] group-hover:gap-2.5 transition-all">
+                  {card.cta}
+                  <ArrowRight size={13} />
+                </span>
               </div>
             </motion.div>
           ))}
