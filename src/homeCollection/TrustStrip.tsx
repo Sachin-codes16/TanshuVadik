@@ -36,7 +36,7 @@ const items = [
 export const TrustStrip: React.FC = () => {
   return (
     <section className="bg-[#FAF8F5] pt-4 pb-10">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="w-full px-[20px]">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {items.map((item) => (
             <div key={item.title} className="flex items-start gap-3">

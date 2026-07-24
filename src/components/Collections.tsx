@@ -189,10 +189,10 @@ export const Collections: React.FC = () => {
 
   return (
     <section id="collections" className="py-0 bg-[#FAF8F5]">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="w-full px-[80px]">
         
         {/* Editorial Heading Section exactly styled like the mockup */}
-        <div className="flex flex-col items-center text-center gap-3 mb-14">
+        <div className="flex flex-col items-center text-center gap-3 mb-3">
 
           <div className="flex items-center gap-3 sm:gap-6 w-full">
             <div className="h-px bg-[#8F533C]/20 flex-1" />

@@ -10,17 +10,27 @@ import { GlobalPresence } from './components/GlobalPresence';
 import { Footer } from './components/Footer';
 import { motion } from 'motion/react';
 import { HomeCollectionPage } from './homeCollection/HomeCollectionPage';
+import { AboutPage } from './about/AboutPage';
 
 export default function App() {
   const [showCollectionsPage, setShowCollectionsPage] = useState(false);
+  const [showAboutPage, setShowAboutPage] = useState(false);
 
   const handleNavigateCollections = () => {
     setShowCollectionsPage(true);
+    setShowAboutPage(false);
+    window.scrollTo({ top: 0 });
+  };
+
+  const handleNavigateAbout = () => {
+    setShowAboutPage(true);
+    setShowCollectionsPage(false);
     window.scrollTo({ top: 0 });
   };
 
   const handleBackToHome = () => {
     setShowCollectionsPage(false);
+    setShowAboutPage(false);
     window.scrollTo({ top: 0 });
   };
 
@@ -29,9 +39,15 @@ export default function App() {
       <div id="app-root" className="min-h-screen bg-[#FAF8F5] text-[#2C2623] font-sans overflow-x-hidden selection:bg-[#8F533C] selection:text-white">
 
         {/* Navigation bar with floating RFQ badge */}
-        <Navbar onNavigateCollections={handleNavigateCollections} onNavigateHome={handleBackToHome} />
+        <Navbar
+          onNavigateCollections={handleNavigateCollections}
+          onNavigateAbout={handleNavigateAbout}
+          onNavigateHome={handleBackToHome}
+        />
 
-        {showCollectionsPage ? (
+        {showAboutPage ? (
+          <AboutPage />
+        ) : showCollectionsPage ? (
           <HomeCollectionPage />
         ) : (
           /* Master visual sections */
@@ -61,7 +77,7 @@ export default function App() {
         )}
 
         {/* Editorial Footnotes and Contacts */}
-        {!showCollectionsPage && <Footer />}
+        <Footer />
 
       </div>
     </InquiryProvider>

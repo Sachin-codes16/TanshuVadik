@@ -113,8 +113,8 @@ export const Certifications: React.FC = () => {
   ];
 
   return (
-    <section id="certifications" className="py-6 bg-[#FAF8F5] border-b border-[#EBE4DC]">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <section id="certifications" className="py-6 bg-[#FAF8F5]">
+      <div className="w-full px-[80px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column - Editorial Text */}

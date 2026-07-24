@@ -89,39 +89,63 @@ import icon7 from "../assets/images/global shipping logo 2 png.png";
 export const TrustStats: React.FC = () => {
   const stats = [
     {
-      icon:< img src={icon1} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon1} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: '20+',
       label: 'Product Categories',
     },
     {
-      icon: < img src={icon2} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon2} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: '100+',
       label: 'Skilled Artisans',
     },
     {
-      icon:< img src={icon3} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon3} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: 'Custom',
       label: 'Manufacturing',
     },
     {
-      icon: < img src={icon4} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon4} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: 'OEM &',
       label: 'Private Label\nSolutions',
     },
     {
-      icon: < img src={icon5} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon5} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: 'Low MOQ',
       label: 'Flexible Volumes',
     },
     {
-      icon: < img src={icon6} className=" w-full h-full object-contain mix-blend-multiply" />,
+      icon: (
+        <div className="w-full h-full rounded-full bg-[#DBC7AE] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon6} className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
+        </div>
+      ),
       value: 'Quality',
       label: 'Assurance At\nEvery Step',
     },
     {
       icon: (
-        <div className="w-full h-full rounded-full bg-[#D7C5AF] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
-          <img src={icon7} alt="Global shipping" className="w-full h-full object-contain scale-[1.6] mix-blend-multiply" />
+        <div className="w-full h-full rounded-full bg-[#C7AF95] border border-[#8F533C]/45 flex items-center justify-center overflow-hidden">
+          <img src={icon7} alt="Global shipping" className="w-full h-full object-contain scale-[1.85] mix-blend-multiply" />
         </div>
       ),
       value: 'Global Shipping',
@@ -129,8 +153,8 @@ export const TrustStats: React.FC = () => {
     },
   ];
 return (
-    <section className="bg-[#FAF8F5]">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <section id="capabilities" className="bg-[#FAF8F5] scroll-mt-28">
+      <div className="w-full">
         <div className="bg-white border border-[#EBE4DC] px-6 py-5">
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-4 gap-y-6 items-center justify-items-center">
           {stats.map((s, index) => (
@@ -142,7 +166,7 @@ return (
               transition={{ duration: 0.3, delay: index * 0.04 }}
               className="flex flex-row items-center justify-center gap-3 text-left w-full"
             >
-              <div className="flex-shrink-0 w-14 h-14 overflow-hidden rounded-full bg-[#EBE4DC] border border-[#8F533C]/30 shadow-[0_4px_14px_rgba(143,83,60,0.6)] flex items-center justify-center p-2.5">
+              <div className="flex-shrink-0 w-16 h-16 overflow-hidden rounded-full bg-[#EBE4DC] border border-[#8F533C]/30 shadow-[0_4px_14px_rgba(143,83,60,0.6)] flex items-center justify-center p-2.5">
                 {s.icon}
               </div>
 

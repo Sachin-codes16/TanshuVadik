@@ -15,13 +15,13 @@ const pins: RoutePin[] = [
   { label: 'MIDDLE EAST', top: '38%', left: '62%' },
   { label: 'JAPAN', top: '34%', left: '80%' },
   { label: 'AUSTRALIA', sub: 'Head Office', top: '64%', left: '83%' },
-  { label: 'NEW ZEALAND', top: '79%', left: '91%' },
+  { label: 'NEW ZEALAND', top: '74%', left: '92%' },
 ];
 
 export const GlobalPresence: React.FC = () => {
   return (
-    <section id="presence" className="pt-8 pb-0 bg-[#FAF8F5]">
-      <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="presence" className="pt-0 pb-0 bg-[#FAF8F5]">
+      <div className="w-full px-[80px] grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         {/* LEFT: Heading & CTA */}
         <div className="lg:col-span-4 flex flex-col items-start gap-4">
@@ -65,7 +65,7 @@ export const GlobalPresence: React.FC = () => {
                   {pin.label}
                 </span>
                 {pin.sub && (
-                  <span className="font-sans text-[8px] text-[#615751] leading-none whitespace-nowrap">
+                  <span className="font-sans text-[8px] font-bold text-[#615751] leading-none whitespace-nowrap">
                     {pin.sub}
                   </span>
                 )}

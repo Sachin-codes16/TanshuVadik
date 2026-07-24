@@ -124,12 +124,14 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
+      id="contact"
       style={{
         background: CREAM,
         borderTop: `1px solid ${ACCENT}33`,
-        padding: '0 0 40px 0',
+        padding: '0 0 0 0',
         fontFamily: SANS,
         color: `${DARK}e6`,
+        scrollMarginTop: '112px',
       }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-[38%_1fr] items-stretch">

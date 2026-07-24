@@ -43,11 +43,11 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 ">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <section className="py-8 ">
+      <div className="w-full px-[80px]">
         
         {/* Title Block */}
-        <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center gap-3">
+        <div className="text-center max-w-3xl mx-auto mb-1 flex flex-col items-center gap-2">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] font-medium tracking-tight">
             Why Global Buyers Choose Tanshu
           </h2>

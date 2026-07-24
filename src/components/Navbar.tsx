@@ -6,18 +6,19 @@ import tanshuLogo from '../assets/images/Tanshulogo.png';
 
 interface NavbarProps {
   onNavigateCollections: () => void;
+  onNavigateAbout: () => void;
   onNavigateHome: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigateHome }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigateAbout, onNavigateHome }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { cart, setIsPortalOpen } = useInquiry();
 
   const menuItems = [
-    { label: 'ABOUT US', href: '#heritage' },
+    { label: 'ABOUT US', href: '#' },
     { label: 'COLLECTIONS', href: '#collections' },
-    { label: 'CAPABILITIES', href: '#collections' }, // Navigates to weave simulator & info
-    { label: 'SUSTAINABILITY', href: '#presence' },
+    { label: 'CAPABILITIES', href: '#capabilities' },
+    { label: 'SUSTAINABILITY', href: '#heritage' },
     { label: 'CERTIFICATIONS', href: '#certifications' },
     { label: 'CONTACT US', href: '#contact' },
   ];
@@ -27,13 +28,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigat
       id="navbar-root"
       className="fixed top-0 left-0 w-full z-50 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EBE4DC] py-4 shadow-xs"
     >
-      <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
+      <div className="w-full px-[80px] flex items-center justify-between">
         
         {/* Brand Logo exactly as requested */}
         <a
           href="#"
           onClick={onNavigateHome}
-          className="flex items-center select-none group shrink-0 -ml-3 sm:-ml-4 mr-4 sm:mr-8 lg:mr-12"
+          className="flex items-center select-none group shrink-0 mr-4 sm:mr-8 lg:mr-12"
         >
           <img
             src={tanshuLogo}
@@ -54,6 +55,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigat
                 <span>{item.label}</span>
                 <span className="text-[8px] text-[#8F533C] translate-y-[0.5px]">▼</span>
               </button>
+            ) : item.label === 'ABOUT US' ? (
+              <button
+                key={item.label}
+                onClick={onNavigateAbout}
+                className="relative font-sans text-[10px] lg:text-xs font-bold text-[#2C2623] hover:text-[#8F533C] tracking-widest transition-colors py-1 nav-link flex items-center gap-1 uppercase shrink-0 cursor-pointer bg-transparent"
+              >
+                <span>{item.label}</span>
+              </button>
             ) : (
               <a
                 key={item.label}
@@ -62,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigat
                 className="relative font-sans text-[10px] lg:text-xs font-bold text-[#2C2623] hover:text-[#8F533C] tracking-widest transition-colors py-1 nav-link flex items-center gap-1 uppercase shrink-0"
               >
                 <span>{item.label}</span>
-                {(item.label === 'CAPABILITIES' || item.label === 'SUSTAINABILITY') && (
+                {item.label === 'SUSTAINABILITY' && (
                   <span className="text-[8px] text-[#8F533C] translate-y-[0.5px]">▼</span>
                 )}
               </a>
@@ -130,6 +139,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateCollections, onNavigat
                   onClick={() => {
                     setIsOpen(false);
                     onNavigateCollections();
+                  }}
+                  className="text-left font-sans text-xs font-bold text-[#2C2623] hover:text-[#8F533C] tracking-widest border-b border-[#F4EFEA] pb-2 transition-colors uppercase cursor-pointer bg-transparent"
+                >
+                  {item.label}
+                </button>
+              ) : item.label === 'ABOUT US' ? (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    setIsOpen(false);
+                    onNavigateAbout();
                   }}
                   className="text-left font-sans text-xs font-bold text-[#2C2623] hover:text-[#8F533C] tracking-widest border-b border-[#F4EFEA] pb-2 transition-colors uppercase cursor-pointer bg-transparent"
                 >

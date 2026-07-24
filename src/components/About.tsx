@@ -5,9 +5,9 @@ export const About: React.FC = () => {
   return (
     <section
       id="heritage"
-      className="pt-8 sm:pt-10 bg-[#FAF8F5] border-t border-[#EBE4DC]"
+      className="pt-3 sm:pt-4 bg-[#FAF8F5]"
     >
-      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start">
+      <div className="w-full px-[80px] grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start">
 
         {/* LEFT SIDE: Artisan Image */}
         <div className="relative w-full h-56 sm:h-72 lg:h-auto overflow-hidden px-6 lg:pl-6 lg:pr-0">
@@ -20,7 +20,7 @@ export const About: React.FC = () => {
         </div>
 
         {/* RIGHT SIDE: Editorial Content */}
-        <div className="flex flex-col justify-start gap-4 px-6 sm:px-12 lg:px-16 pt-6 lg:pt-0 pb-8 sm:pb-6 lg:pb-8">
+        <div className="flex flex-col justify-start gap-4 px-6 sm:px-12 lg:px-16 pt-3 lg:pt-0 pb-3 sm:pb-3 lg:pb-3">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2C2623] tracking-tight font-medium leading-tight">
             The Heart Behind Every Piece
           </h2>

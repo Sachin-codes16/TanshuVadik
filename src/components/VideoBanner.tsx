@@ -7,8 +7,8 @@ export const VideoBanner: React.FC = () => {
 
   return (
     <>
-      <section className="bg-[#FAF8F5] py-8 sm:py-10">
-        <div className="max-w-[1280px] mx-auto px-6">
+      <section className="bg-[#FAF8F5] py-3 sm:py-4">
+        <div className="w-full">
           <div className="relative min-h-[360px] sm:h-[420px] py-16 sm:py-0 flex items-center justify-center overflow-hidden bg-[#2C2623]">
             {/* Background image with parallax-like styling and deep dark overlay */}
             <div className="absolute inset-0 z-0">
